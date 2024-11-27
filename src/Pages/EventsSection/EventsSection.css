@@ -1,0 +1,26 @@
+.events-section {
+  padding: 10px 20px;
+  background-color: transparent;
+}
+
+.section {
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  color: white;
+}
+
+.events-grid {
+  display: flex; /* Grid düzeni */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Dinamk kolonlar */
+  gap: 30px; /* Kartlar arası eşit boşluk */
+  padding: 20px;
+}

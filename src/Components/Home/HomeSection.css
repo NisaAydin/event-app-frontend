@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500;1,700&display=swap");
+/* Genel Ayarlar */
+body {
+  font-family: "Poppins", sans-serif;
+}
+.hero {
+  height: 100vh;
+  background: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 680px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.hero-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.discount-tag {
+  display: flex;
+  align-items: center;
+  background-color: #00b4d8;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  max-width: 300px;
+}
+
+.discount-tag span {
+  margin-left: 10px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.hero-title span {
+  background: linear-gradient(
+    to bottom,
+    white,
+    #00b4d8
+  ); /* Üstten alta gradient */
+  -webkit-background-clip: text; /* Arka planı yalnızca metin alanına uygula */
+  -webkit-text-fill-color: transparent; /* Metni şeffaf yap */
+  background-clip: text; /* Modern tarayıcılar için */
+}
+
+.hero-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 500px;
+  color: #c9d1d9;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.hero-button {
+  background-color: #00b4d8;
+  color: black;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #0077a7;
+  transform: scale(1.05);
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin-left: 100px;
+}

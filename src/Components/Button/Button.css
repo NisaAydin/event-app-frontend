@@ -1,0 +1,47 @@
+/* Genel Buton Stilleri */
+.custom-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  gap: 3px;
+}
+
+/* Primary Buton (Sign Up) */
+.custom-button.primary {
+  background-color: #00b4d8;
+  color: #1f1f2e;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-button.primary:hover {
+  background-color: #0077a7;
+  transform: scale(1.05);
+}
+
+/* Secondary Buton (Sign In) */
+.custom-button.secondary {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #00b4d8;
+  transition: all 0.3s ease;
+}
+
+.custom-button.secondary:hover {
+  background-color: #0077a7;
+  color: rgb(13, 16, 25);
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* İkon için stil */
+.button-icon {
+  font-size: 1rem;
+}

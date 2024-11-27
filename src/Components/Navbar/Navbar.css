@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1f1f2e, #282c34);
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background: linear-gradient(135deg, #1f1f2e);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /*Ekranın hep bir yerinde kalmasını sağlar */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.logo-icon {
+  font-size: 1.8rem;
+}
+.logo-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+}
+.logo-text .highligt {
+  color: #00b4d8;
+}
+
+/* Menü */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px; /* Flexbox elemanları arasında boşluk miktarı */
+}
+
+.navbar-menu li {
+  position: relative;
+}
+.navbar-menu li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #c9d1d9;
+  transition: color 0.3s ease; /* renk geçişini belli bir zamanda yapmak için */
+}
+.navbar-menu li a:hover {
+  color: #00b4d8;
+}
+
+.navbar-login {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
