@@ -39,7 +39,7 @@ function SelectedDayEvents() {
       description: "Join us for a cultural evening of fun and networking.",
       date: "2024-11-28",
       time: "7:00 PM",
-      location: "City Center",
+      location: "41 Avm",
       image:
         "https://radyorjinal.com/wp-content/uploads/2022/06/van-gogh-dijital-sergisi-acildi-uOqGwd2i-450x300.jpg",
       category: "Art & Culture",

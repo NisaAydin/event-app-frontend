@@ -33,6 +33,8 @@ function EventsSection({ events }) {
       title: "Van Gogh Sergisi",
       organizer: "Larina",
       date: "01 Aralık 2024",
+      description:
+        "Van Gogh’un eşsiz fırça darbeleriyle hayat bulan tabloları, sizleri duygu dolu bir yolculuğa çıkarıyor. Bu özel sergide, sanatçının yaşamından ilham alarak yarattığı eserlerin derinliklerine inme fırsatı bulacaksınız. Yıldızlı Gece’nin büyüsünden, Ayçiçekleri’nin canlı renklerine kadar birçok ikonik eser, dijital ve fiziksel sergilemelerle gözlerinizin önünde canlanıyor.",
       time: "21:00",
       location: "İstanbul",
       image:

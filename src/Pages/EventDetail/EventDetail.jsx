@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./EventDetail.css";
+import Button from "../../Components/Button/Button";
 
 function EventDetail() {
   const location = useLocation();
@@ -11,6 +12,18 @@ function EventDetail() {
   if (!event) {
     return <p className="event-detail-error">Etkinlik bilgisi bulunamadı!</p>;
   }
+  const handleJoinEvent = () => {
+    alert("Etkinliğe katılınıyor.");
+  };
+
+  const handleBackButton = () => {
+    navigate("/dashboard");
+  };
+
+  // Google Maps Embed API URL'si
+  const googleMapsUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyB-K7bSzVpimqXlTacrLSpGE8ZtcD_KZ4A&q=${encodeURIComponent(
+    event.location
+  )}`;
 
   return (
     <div className="event-detail-container">
@@ -42,20 +55,34 @@ function EventDetail() {
             <strong>Konum:</strong> {event.location}
           </p>
         </div>
+        <Button
+          text={"Etkinliğe Katıl"}
+          onClick={handleJoinEvent}
+          variant="toggle"
+          className="join-event-button"
+        ></Button>
       </div>
 
-      {/* Siyah Alan (Map Yerine) */}
-      <div className="event-detail-map-placeholder">
-        <h3>Harita Alanı</h3>
+      {/* Harita Alanı */}
+      <div className="event-detail-map">
+        <h3>Etkinlik Konumu</h3>
+        <iframe
+          title="Etkinlik Haritası"
+          className="event-detail-map-frame"
+          src={googleMapsUrl}
+          allowFullScreen
+          loading="lazy"
+        ></iframe>
       </div>
 
       {/* Geri Dön Butonu */}
-      <button
+
+      <Button
+        text={"Geri Dön"}
+        onClick={handleBackButton}
+        variant="toggle"
         className="event-detail-button"
-        onClick={() => navigate("/dashboard")}
-      >
-        Geri Dön
-      </button>
+      ></Button>
     </div>
   );
 }

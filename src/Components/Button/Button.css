@@ -45,3 +45,21 @@
 .button-icon {
   font-size: 1rem;
 }
+.custom-button.toggle {
+  display: block;
+  margin: 20px auto;
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.custom-button.toggle:hover {
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  transform: scale(1.05);
+}
