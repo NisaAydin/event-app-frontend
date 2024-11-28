@@ -5,23 +5,33 @@ import ReviewSection from "./Pages/Review/ReviewSection";
 import SignUpPage from "./Pages/SignUpPage/SignUpPage";
 import HomePage from "./Pages/HomePage/HomePage";
 import Signin from "./Pages/Sign In/SigninPage";
+import UserProfilePage from "./Pages/ProfilePage/UserProfilePage";
+import ProfileEditPage from "./Pages/ProfileEditPage/ProfileEditPage"
+import ForgotPasswordPage from "./Pages/ForgetPasswordPage/ForgetPasswordPage";
+import ResetPasswordPage from "./Pages/ResetPasswordPage/ResetPasswordPage";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
-  
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        {/* Ana Sayfa: HomePage */}
-        <Route path="/" element={<HomePage />} />
+    <AuthProvider>
+      <Router>
+        <Navbar />
+        <Routes>
+          {/* Ana Sayfa: HomePage */}
+          <Route path="/" element={<HomePage />} />
 
-        {/* Diğer Sayfalar */}
-        <Route path="/events" element={<EventsSection />} />
-        <Route path="/reviews" element={<ReviewSection />} />
-        <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/signin" element={<Signin />} />
-      </Routes>
-    </Router>
+          {/* Diğer Sayfalar */}
+          <Route path="/events" element={<EventsSection />} />
+          <Route path="/reviews" element={<ReviewSection />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/profile" element={<UserProfilePage />} />
+          <Route path="/profile/edit" element={<ProfileEditPage />}/>
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="/reset-password" element={<ResetPasswordPage />} /> 
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 

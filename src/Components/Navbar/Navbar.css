@@ -71,3 +71,37 @@ body {
   align-items: center;
   gap: 20px;
 }
+
+/* Profil resmi stili */
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+/* Dropdown menü stili */
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1000;
+}
+
+/* Dropdown menü öğeleri */
+.dropdown-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f4f4f4;
+  color: #000;
+}
