@@ -33,10 +33,14 @@
 /* Görsel */
 .event-image {
   width: 100%;
+  min-height: 150px;
   height: 150px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0; /* Resmin küçülmesini önler */
 }
 
 /* Bilgi alanı */

@@ -1,6 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import {
+  FaUser,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaBirthdayCake,
+} from "react-icons/fa";
+import { IoPersonCircle } from "react-icons/io5";
+import "./UserProfilePage.css";
+
 function ProfilePage() {
   const [profile, setProfile] = useState(null);
   const [error, setError] = useState(null);
@@ -9,7 +19,7 @@ function ProfilePage() {
     const fetchProfile = async () => {
       try {
         const response = await axios.get("http://localhost:3000/user/profile", {
-          withCredentials: true, // Cookie'yi backend'e gönderir
+          withCredentials: true,
         });
         setProfile(response.data.data);
       } catch (err) {
@@ -24,19 +34,47 @@ function ProfilePage() {
   if (!profile) return <div>Loading...</div>;
 
   return (
-    <div>
-      <h1>Kullanıcı Profili</h1>
-      <p><strong>Kullanıcı Adı:</strong> {profile.Username}</p>
-      <p><strong>E-posta:</strong> {profile.Email}</p>
-      <p><strong>Ad:</strong> {profile.Name}</p>
-      <p><strong>Soyad:</strong> {profile.Surname}</p>
-      <p><strong>Doğum Tarihi:</strong> {new Date(profile.BirthDate).toLocaleDateString()}</p>
-      <p><strong>Telefon Numarası:</strong> {profile.PhoneNumber}</p>
-      <p><strong>Lokasyon:</strong> {profile.Location}</p>
-      <p><strong>İlgi alanları:</strong> {profile.interests.join(",")}</p>
-      <img src={`http://localhost:3000/${profile.ProfilePicture}`} alt="Profile" />
+    <div className="profile-page">
+      <h1 className="profile-title">Kullanıcı Profili</h1>
+      <img
+        className="profile-picture"
+        src={`http://localhost:3000/${profile.ProfilePicture}`}
+        alt="Profile"
+      />
+      <div className="profile-info">
+        <p>
+          <IoPersonCircle className="profile-icon" />
+          <strong>Kullanıcı Adı:</strong> {profile.Username}
+        </p>
+        <p>
+          <FaEnvelope className="profile-icon" />
+          <strong>E-posta:</strong> {profile.Email}
+        </p>
+        <p>
+          <strong>Ad:</strong> {profile.Name}
+        </p>
+        <p>
+          <strong>Soyad:</strong> {profile.Surname}
+        </p>
+        <p>
+          <FaBirthdayCake className="profile-icon" />
+          <strong>Doğum Tarihi:</strong>{" "}
+          {new Date(profile.BirthDate).toLocaleDateString()}
+        </p>
+        <p>
+          <FaPhone className="profile-icon" />
+          <strong>Telefon Numarası:</strong> {profile.PhoneNumber}
+        </p>
+        <p>
+          <FaMapMarkerAlt className="profile-icon" />
+          <strong>Lokasyon:</strong> {profile.Location}
+        </p>
+        <p>
+          <strong>İlgi alanları:</strong> {profile.interests.join(", ")}
+        </p>
+      </div>
       <Link to="/profile/edit">
-        <button>Edit Profile</button>
+        <button className="edit-button">Edit Profile</button>
       </Link>
     </div>
   );

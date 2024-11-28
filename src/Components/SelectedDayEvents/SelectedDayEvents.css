@@ -1,0 +1,27 @@
+/* Dashboard Ana Yapısı */
+.selected-day-container {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  background: transparent;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  /*position: relative;*/
+  margin-top: auto;
+}
+
+.selected-day-event-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto; /* İçeriği kaydırılabilir yapar */
+  max-height: 550px; /* Maksimum yükseklik sınırı */
+  min-height: 250px;
+  /*position: absolute;*/
+}
+.selected-day-main {
+  width: 600px;
+  min-height: 250px;
+}

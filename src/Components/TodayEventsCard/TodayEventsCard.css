@@ -1,0 +1,104 @@
+/* Kart Genel Düzeni */
+.today-event-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, #1f1f2e, #434955);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 700px;
+  color: #ffffff;
+}
+
+.today-event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Resim */
+.today-event-image {
+  width: 150px; /* Büyük halini koruyacak şekilde genişlik */
+  height: 100px; /* Büyük halini koruyacak şekilde yükseklik */
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0; /* Resmin küçülmesini önler */
+}
+
+/* Bilgi Alanı */
+.today-event-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 0; /* İçerik taşmasını engeller */
+}
+
+/* Kategori */
+.today-event-category {
+  background-color: #00b4d8;
+  color: #1f1f2e;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  max-width: fit-content; /* Metin kadar genişlik */
+  margin-bottom: 10px; /* Başlık ile boşluk */
+}
+
+/* Başlık */
+.today-event-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+/* Açıklama */
+.today-event-description {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  margin-bottom: 10px;
+  overflow: hidden; /* Taşan kısmı gizler */
+  text-overflow: ellipsis; /* Uzun metinlerde üç nokta ekler */
+  white-space: nowrap; /* Tek satır tut */
+  line-height: 1.2rem; /* Satır yüksekliği */
+  width: 100%; /* Resmin sağındaki tüm alanı kapla */
+}
+
+/* Tarih ve Zaman */
+.today-event-date-time {
+  display: flex;
+  gap: 15px;
+}
+
+.today-event-date,
+.today-event-time {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #b0b0b0;
+}
+
+.today-event-icon {
+  margin-right: 8px;
+  font-size: 1rem;
+  color: #00b4d8;
+}
+
+/* Konum */
+.today-event-location {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  display: flex;
+  align-items: center;
+}
+
+.today-event-date-location {
+  margin-top: auto;
+  gap: 2px;
+  display: flex;
+  flex-direction: column;
+}

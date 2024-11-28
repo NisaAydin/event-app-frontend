@@ -33,7 +33,7 @@ function SignInPage() {
 
       console.log("Login successful: ", response.data);
       login(response.data.user); // AuthContext'teki login fonksiyonunu çağır
-      navigate("/none"); // Profil sayfasına yönlendir
+      navigate("/dashboard");
     } catch (error) {
       console.error("Login error: ", error.response?.data || error.message);
       setErrorMessage(error.response?.data?.error || "An error occurred.");

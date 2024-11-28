@@ -1,46 +1,50 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500;1,700&display=swap");
-
-* {
-  box-sizing: border-box;
-}
-
+/* Genel Stil */
 body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, #1f1f2e, #282c34);
   font-family: "Poppins", sans-serif;
 }
 
-.navbar {
+.navbar,
+.user-navbar {
   width: 100%;
   display: flex;
   height: 80px;
   justify-content: space-between;
   align-items: center;
   padding: 10px 40px;
-  background: linear-gradient(135deg, #1f1f2e);
+  background: #1f1f2e; /* Şeffaflık yerine sabit bir renk */
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
-  position: fixed; /*Ekranın hep bir yerinde kalmasını sağlar */
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
-.navbar-logo {
+/* Logo Alanı */
+.navbar-logo,
+.user-navbar-logo {
   display: flex;
   align-items: center;
   gap: 15px;
 }
+
 .logo-icon {
   font-size: 1.8rem;
 }
+
 .logo-text {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: white;
 }
-.logo-text .highligt {
+
+.logo-text .highlight {
   color: #00b4d8;
 }
 
@@ -48,60 +52,109 @@ body {
 .navbar-menu {
   display: flex;
   list-style: none;
-  gap: 30px; /* Flexbox elemanları arasında boşluk miktarı */
+  gap: 30px;
 }
 
 .navbar-menu li {
   position: relative;
 }
+
 .navbar-menu li a {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
   color: #c9d1d9;
-  transition: color 0.3s ease; /* renk geçişini belli bir zamanda yapmak için */
+  transition: color 0.3s ease;
 }
+
 .navbar-menu li a:hover {
   color: #00b4d8;
 }
 
+/* Giriş Yapılmamış Kullanıcı */
 .navbar-login {
-  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* Profil resmi stili */
-.profile-picture {
+/* Giriş Yapılmış Kullanıcı */
+.user-navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.user-navbar-search {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  font-size: 1rem;
+  background-color: #434955;
+  color: white;
+  width: 300px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.user-navbar-search:focus {
+  box-shadow: 0 0 10px #00b4d8;
+}
+
+.user-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-navbar-icon {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.user-navbar-icon:hover {
+  color: #00b4d8;
+  transform: scale(1.1);
+}
+
+/* Profil Alanı */
+.user-navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.user-avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 2px solid #ddd;
+  border: 2px solid #00b4d8;
 }
 
-/* Dropdown menü stili */
+/* Dropdown Menü */
 .dropdown-menu {
   position: absolute;
-  top: 50px;
-  right: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  top: 70px;
+  right: 40px;
+  background: #2c2f36;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
   z-index: 1000;
 }
 
-/* Dropdown menü öğeleri */
 .dropdown-item {
   padding: 10px 20px;
+  font-size: 1rem;
+  color: #c9d1d9;
   cursor: pointer;
-  color: #333;
-  text-decoration: none;
+  transition: background 0.3s ease;
 }
 
 .dropdown-item:hover {
-  background-color: #f4f4f4;
-  color: #000;
+  background: #00b4d8;
+  color: white;
 }

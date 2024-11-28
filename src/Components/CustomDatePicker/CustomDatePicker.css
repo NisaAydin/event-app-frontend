@@ -1,0 +1,65 @@
+.custom-datepicker {
+  background: linear-gradient(135deg, #1f1f2e, #434955);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  max-width: 350px;
+}
+
+/* Takvim Gövdesi */
+.react-datepicker {
+  background: transparent;
+  border: none;
+  width: 100%;
+}
+
+/* Başlık */
+.react-datepicker__header {
+  background: transparent;
+  border-bottom: none;
+  color: white;
+  padding: 10px;
+}
+
+.react-datepicker__current-month {
+  color: #00b4d8;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day {
+  color: white;
+  font-size: 0.9rem;
+  margin: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Günler Arasında Gezinme */
+.react-datepicker__day:hover {
+  background-color: #0077a7;
+  color: black;
+}
+
+.react-datepicker__day--selected {
+  background-color: #00b4d8;
+  color: #1f1f2e;
+  font-weight: bold;
+}
+
+.react-datepicker__navigation {
+  top: 15px;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: white;
+}

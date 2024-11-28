@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify"; // Toastify'i ekleyin
 import "react-toastify/dist/ReactToastify.css";
+import "./ProfileEditPage.css";
 
 function ProfileEditPage() {
   const [formData, setFormData] = useState({
@@ -35,8 +36,16 @@ function ProfileEditPage() {
           withCredentials: true,
         });
 
-        const { Name, Surname, Location, Email, BirthDate, PhoneNumber, Username, interests } =
-          response.data.data;
+        const {
+          Name,
+          Surname,
+          Location,
+          Email,
+          BirthDate,
+          PhoneNumber,
+          Username,
+          interests,
+        } = response.data.data;
 
         setFormData({
           name: Name,
@@ -104,7 +113,10 @@ function ProfileEditPage() {
         navigate("/profile"); // 3 saniye sonra yönlendir
       }, 3000);
     } catch (error) {
-      console.error("Error updating profile: ", error.response?.data || error.message);
+      console.error(
+        "Error updating profile: ",
+        error.response?.data || error.message
+      );
       toast.error("Kayıt sırasında hata oluştu. Lütfen tekrar deneyin.", {
         position: "top-right",
         autoClose: 3000, // 3 saniye sonra kapanır
@@ -115,8 +127,8 @@ function ProfileEditPage() {
   return (
     <div>
       <ToastContainer /> {/* Toastify bileşeni */}
-      <h1>Edit Profile</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="profile-edit-form" onSubmit={handleSubmit}>
+        <h1>Edit Profile</h1>
         <label>
           Name:
           <input
@@ -182,7 +194,11 @@ function ProfileEditPage() {
         </label>
         <label>
           Profile Picture:
-          <input type="file" name="profilePicture" onChange={handleFileChange} />
+          <input
+            type="file"
+            name="profilePicture"
+            onChange={handleFileChange}
+          />
         </label>
         <label>
           Interests:

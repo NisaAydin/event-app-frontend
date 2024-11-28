@@ -1,0 +1,115 @@
+/* Ana Form Alanı */
+.profile-edit-form {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #1f1f2e, #434955);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Başlık */
+.profile-edit-form h1 {
+  font-size: 2.5rem;
+  color: #00b4d8;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Etiket ve Input Alanı */
+.profile-edit-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
+  color: #d1d5db;
+  gap: 8px;
+}
+
+.profile-edit-form input[type="text"],
+.profile-edit-form input[type="email"],
+.profile-edit-form input[type="date"],
+.profile-edit-form input[type="tel"],
+.profile-edit-form input[type="file"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  background-color: #434955;
+  color: white;
+  outline: none;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.profile-edit-form input[type="text"]:focus,
+.profile-edit-form input[type="email"]:focus,
+.profile-edit-form input[type="date"]:focus,
+.profile-edit-form input[type="tel"]:focus,
+.profile-edit-form input[type="file"]:focus {
+  box-shadow: 0 0 8px #00b4d8;
+  background-color: #3a404d;
+}
+
+/* İlgi Alanları */
+.profile-edit-form div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: white;
+}
+
+.profile-edit-form div input[type="checkbox"] {
+  margin-right: 5px;
+  accent-color: #00b4d8; /* Modern checkbox rengi */
+}
+
+.profile-edit-form div input[type="checkbox"] + span {
+  font-size: 1rem;
+  color: #d1d5db;
+}
+
+/* Buton */
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00b4d8;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: #0077a7;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  background-color: #005f84;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  form {
+    margin: 50px 20px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}

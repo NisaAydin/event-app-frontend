@@ -1,0 +1,127 @@
+/* Ana Konteyner */
+.event-detail-container {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  background-color: #1f1f2e;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Üst Görsel Alanı */
+.event-detail-header {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.event-detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.event-detail-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.event-detail-title {
+  font-size: 2rem;
+  color: #00b4d8;
+  font-weight: bold;
+}
+
+.event-detail-category {
+  font-size: 1rem;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* İçerik Alanı */
+.event-detail-content {
+  padding: 20px;
+  text-align: left;
+
+  color: #ffffff;
+}
+
+.event-detail-description {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #c9d1d9;
+}
+
+.event-detail-info p {
+  font-size: 18px;
+  color: #c9d1d9;
+  margin: 5px 0;
+}
+
+.event-detail-info strong {
+  color: #00b4d8;
+}
+
+/* Siyah Alan (Map Yerine) */
+.event-detail-map-placeholder {
+  background-color: #000000;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 15px;
+  margin: 20px auto;
+}
+
+.event-detail-map-placeholder h3 {
+  color: #c9d1d9;
+  font-size: 1.2rem;
+}
+
+/* Geri Dön Butonu */
+.event-detail-button {
+  display: block;
+  margin: 20px auto;
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.event-detail-button:hover {
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  transform: scale(1.05);
+}
+
+/* Hata Mesajı */
+.event-detail-error {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 20px;
+}
+.event-detail-category2 {
+  /* Kategori */
+
+  background-color: #00b4d8;
+  color: #1f1f2e;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  max-width: fit-content; /* Metin kadar genişlik */
+  margin-bottom: 10px; /* Başlık ile boşluk */
+}

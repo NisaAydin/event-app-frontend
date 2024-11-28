@@ -1,5 +1,6 @@
 import React from "react";
 import "./EventCard.css";
+import { useNavigate } from "react-router-dom";
 import {
   IoCalendarOutline,
   IoTimeOutline,
@@ -7,8 +8,13 @@ import {
 } from "react-icons/io5";
 
 function EventCard({ event }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate("/event-detail", { state: { event } });
+  };
   return (
-    <div className="event-card">
+    <div className="event-card" onClick={handleCardClick}>
       <img src={event.image} alt={event.title} className="event-image" />
       <div className="event-info">
         {/* Kategori */}

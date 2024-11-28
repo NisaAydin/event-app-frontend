@@ -3,7 +3,7 @@ import EventCard from "../../Components/EventCard/EventCard";
 import "./EventsSection.css";
 import image1 from "../../assets/images/event1.jpeg";
 
-function EventsSection() {
+function EventsSection({ events }) {
   const trendingEvents = [
     {
       id: 1,
@@ -49,7 +49,8 @@ function EventsSection() {
       date: "01 Aralık 2024",
       time: "19:00",
       location: "İstanbul",
-      image: image1,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBvd8rQdY0YHwZWIRi305NYS_Ft_m4fQqJ6A&s",
     },
   ];
 
@@ -62,7 +63,8 @@ function EventsSection() {
       date: "01 Aralık 2024",
       time: "19:00",
       location: "İstanbul",
-      image: image1,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBvd8rQdY0YHwZWIRi305NYS_Ft_m4fQqJ6A&s",
     },
   ];
 
@@ -78,18 +80,18 @@ function EventsSection() {
       </div>
 
       <div className="section">
-        <h2 className="section-title">Yaklaşan Etkinlikler</h2>
+        <h2 className="section-title">Sizin İçin Önerilenler</h2>
         <div className="events-grid">
-          {upcomingEvents.map((event) => (
+          {recommendedEvents.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
         </div>
       </div>
 
       <div className="section">
-        <h2 className="section-title">Sizin İçin Önerilenler</h2>
+        <h2 className="section-title">Yaklaşan Etkinlikler</h2>
         <div className="events-grid">
-          {recommendedEvents.map((event) => (
+          {upcomingEvents.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
         </div>
