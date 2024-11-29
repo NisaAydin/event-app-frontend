@@ -38,8 +38,6 @@
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
-  object-fit: cover;
-  border-radius: 8px;
   flex-shrink: 0; /* Resmin küçülmesini önler */
 }
 

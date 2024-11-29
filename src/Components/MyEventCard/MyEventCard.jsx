@@ -1,6 +1,11 @@
 /* eslint-disable react/prop-types */
 import "./MyEventCard.css"; // Kart için özel stil dosyası
-import { IoCalendarOutline, IoTimeOutline, IoLocationOutline } from "react-icons/io5";
+import {
+  IoCalendarOutline,
+  IoTimeOutline,
+  IoLocationOutline,
+} from "react-icons/io5";
+import Button from "../Button/Button";
 
 function MyEventCard({ event, onClick, onDelete }) {
   return (
@@ -12,24 +17,28 @@ function MyEventCard({ event, onClick, onDelete }) {
         onClick={onClick} // Kart tıklandığında düzenleme sayfasına yönlendirme
       />
       <div className="my-event-info">
+        {/* Kategori */}
+        <div className="my-event-category">
+          <strong></strong>{" "}
+          {event.Category?.Category || "Kategori belirtilmedi"}
+        </div>
         {/* Etkinlik Başlığı */}
-        <h3 className="my-event-title">{event.EventName || "Etkinlik Adı Yok"}</h3>
+
+        <h3 className="my-event-title">
+          {event.EventName || "Etkinlik Adı Yok"}
+        </h3>
 
         {/* Açıklama */}
         <p className="my-event-description">
           {event.Description || "Açıklama bulunmuyor."}
         </p>
 
-        {/* Kategori */}
-        <p className="my-event-category">
-          <strong>Kategori:</strong> {event.Category?.Category || "Kategori belirtilmedi"}
-        </p>
-
         {/* Tarih ve Zaman */}
         <div className="my-event-date-time">
           <p className="my-event-date">
             <IoCalendarOutline className="my-event-icon" />{" "}
-            {new Date(event.EventDate).toLocaleDateString("tr-TR") || "Tarih belirtilmedi"}
+            {new Date(event.EventDate).toLocaleDateString("tr-TR") ||
+              "Tarih belirtilmedi"}
           </p>
           <p className="my-event-time">
             <IoTimeOutline className="my-event-icon" />{" "}
@@ -44,13 +53,11 @@ function MyEventCard({ event, onClick, onDelete }) {
           {event.Location || "Konum belirtilmedi"}
         </p>
 
-        {/* Sil Butonu */}
-        <button
-          className="delete-event-button"
-          onClick={() => onDelete(event.id)} // Silme işlemi tetiklenir
-        >
-          Sil
-        </button>
+        <Button
+          text={"Sil"}
+          variant="toggle"
+          onClick={() => onDelete(event.id)}
+        ></Button>
       </div>
     </div>
   );

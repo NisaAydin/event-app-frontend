@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./UpdateEvent.css";
 
 function UpdateEvent() {
   const { id } = useParams(); // URL'den etkinlik ID'sini al
@@ -34,9 +35,12 @@ function UpdateEvent() {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/event/getEventById/${id}`, {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          `http://localhost:3000/event/getEventById/${id}`,
+          {
+            withCredentials: true,
+          }
+        );
         const fetchedEvent = response.data;
 
         setEvent({
@@ -100,11 +104,11 @@ function UpdateEvent() {
   };
 
   return (
-    <div>
+    <div className="update-event-page">
       <ToastContainer />
-      <h2>Etkinlik Güncelle</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <h2 className="update-event-title">Etkinlik Güncelle</h2>
+      <form className="update-event-form" onSubmit={handleSubmit}>
+        <div className="update-event-field">
           <label>Etkinlik Adı:</label>
           <input
             type="text"
@@ -114,15 +118,16 @@ function UpdateEvent() {
             required
           />
         </div>
-        <div>
+        <div className="update-event-field">
           <label>Açıklama:</label>
           <textarea
             name="Description"
             value={event.Description}
             onChange={handleChange}
+            className="description"
           ></textarea>
         </div>
-        <div>
+        <div className="update-event-field">
           <label>Tarih:</label>
           <input
             type="date"
@@ -132,7 +137,7 @@ function UpdateEvent() {
             required
           />
         </div>
-        <div>
+        <div className="update-event-field">
           <label>Başlangıç Saati:</label>
           <input
             type="time"
@@ -142,7 +147,7 @@ function UpdateEvent() {
             required
           />
         </div>
-        <div>
+        <div className="update-event-field">
           <label>Bitiş Saati:</label>
           <input
             type="time"
@@ -152,11 +157,11 @@ function UpdateEvent() {
             required
           />
         </div>
-        <div>
+        <div className="update-event-field">
           <label>Kategori:</label>
-          <div>
+          <div className="category-options">
             {interestOptions.map((category) => (
-              <div key={category}>
+              <div key={category} className="category-option">
                 <input
                   type="radio"
                   id={category}
@@ -170,11 +175,13 @@ function UpdateEvent() {
             ))}
           </div>
         </div>
-        <div>
+        <div className="update-event-field">
           <label>Resim:</label>
           <input type="file" onChange={handleFileChange} />
         </div>
-        <button type="submit">Güncelle</button>
+        <button className="update-event-button" type="submit">
+          Güncelle
+        </button>
       </form>
     </div>
   );

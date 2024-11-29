@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1f1f2e, #282c34);
+  color: white;
+}
+
+/* Ana Konteyner */
+.my-events-container {
+  max-width: 900px;
+  margin: 120px auto; /* Ortala ve yukarıda boşluk bırak */
+  padding: 30px;
+  background: linear-gradient(135deg, #1f1f2e, #434955);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in animasyonu */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Etkinlik Listesi */
+.my-events-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Henüz etkinlik yok mesajı */
+.my-events-list p {
+  text-align: center;
+  color: #b0b0b0;
+  font-size: 1.2rem;
+}

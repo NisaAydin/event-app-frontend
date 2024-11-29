@@ -158,3 +158,17 @@ body {
   background: #00b4d8;
   color: white;
 }
+/* Yeni Bağlantılar */
+.user-navbar-link {
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.user-navbar-link:hover {
+  color: #00b4d8;
+  transform: scale(1.1);
+}

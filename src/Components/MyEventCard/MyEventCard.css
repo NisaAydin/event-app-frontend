@@ -1,75 +1,111 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1f1f2e, #282c34);
+  color: white;
+}
+
+/* Fade-in animasyonu */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Etkinlik Kartı */
 .my-event-card {
+  background: linear-gradient(135deg, #1f1f2e, #434955);
+  padding: 20px;
+  width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 10px;
-  background-color: #fff;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  transition: box-shadow 0.3s ease;
 }
 
 .my-event-card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
-.my-event-image {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
+/* Kart Başlığı */
+.my-event-card h3 {
+  font-size: 1.5rem;
+  color: #00b4d8;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.my-event-info {
-  width: 100%;
-  padding: 10px;
+/* Kart Açıklaması */
+.my-event-card p {
+  font-size: 1rem;
+  color: #b0b0b0;
+  margin: 10px 0;
+  text-align: center;
 }
 
-.my-event-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 8px 0;
-}
-
-.my-event-description {
-  font-size: 14px;
-  color: #555;
-  margin: 8px 0;
-}
-
-.my-event-date-time,
-.my-event-location {
-  font-size: 14px;
-  color: #777;
+/* Kart Butonları */
+.my-event-card .event-buttons {
   display: flex;
-  align-items: center;
-  margin: 4px 0;
+  justify-content: center;
+  gap: 10px;
 }
 
-.my-event-icon {
-  margin-right: 5px;
+.my-event-card .event-buttons button {
+  flex: 1;
+  padding: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .my-event-category {
-  font-size: 14px;
-  color: #555;
-  margin: 8px 0;
-}
-
-.delete-event-button {
-  background-color: #ff4d4f;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
+  background-color: #00b4d8;
+  color: #1f1f2e;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 10px; /* Başlık ile boşluk */
   margin-top: 10px;
-  transition: background-color 0.3s ease;
 }
-
-.delete-event-button:hover {
-  background-color: #ff7875;
+.my-event-icon {
+  margin-right: 8px;
+  font-size: 1rem;
+  color: #00b4d8;
+}
+.my-event-image {
+  height: 300px;
+  object-fit: cover;
+  flex-shrink: 0; /* Resmin küçülmesini önler */
+}
+.my-event-date-time {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+/* Konum */
+.my-event-location {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #b0b0b0;
+}
+.my-event-description {
+  display: flex;
+  align-items: center;
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoPerson, IoNotificationsOutline } from "react-icons/io5";
 import { FiMessageSquare } from "react-icons/fi";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt, FaUserClock } from "react-icons/fa";
 import axios from "axios";
 import { useAuth } from "../../context/AuthContext";
 import Button from "../Button/Button";
@@ -110,6 +110,12 @@ function Navbar() {
         />
       </div>
       <div className="user-navbar-right">
+        <Link to={"/my-events"} className="user-navbar-link">
+          Kendi Etkinliklerim
+        </Link>
+        <Link to="/onay" className="user-navbar-icon">
+          <FaUserClock />
+        </Link>
         <Link to="/maps" className="user-navbar-icon">
           <FaMapMarkerAlt />
         </Link>
@@ -119,6 +125,7 @@ function Navbar() {
         <Link to="/notifications" className="user-navbar-icon">
           <IoNotificationsOutline />
         </Link>
+
         <div className="user-navbar-profile" onClick={toggleDropdown}>
           <img
             src={

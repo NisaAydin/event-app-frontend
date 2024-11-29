@@ -7,7 +7,7 @@ function MyEvents() {
   const [myEvents, setMyEvents] = useState([]); // Kullanıcının etkinlikleri
   const navigate = useNavigate();
 
-  // Kullanıcının etkinliklerini yükle
+  // Kullanıcının etkinliklerini backendden alma
   useEffect(() => {
     const fetchMyEvents = async () => {
       try {
@@ -60,7 +60,7 @@ function MyEvents() {
 
   return (
     <div className="my-events-container">
-      <h2>Kendi Etkinliklerim</h2>
+      <h2 className="title">Kendi Etkinliklerim</h2>
       <div className="my-events-list">
         {myEvents.length > 0 ? (
           myEvents.map((event) => (

@@ -6,7 +6,6 @@ import axios from "axios";
 import "./SelectedDayEvents.css";
 import CreateEventCard from "../CreateEventCard/CreateEventCard";
 import { useNavigate } from "react-router-dom";
-import Button from "../Button/Button";
 
 function SelectedDayEvents() {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -42,10 +41,6 @@ function SelectedDayEvents() {
     });
   };
 
-  const handleMyEventsClick = () => {
-    navigate("/my-events");
-  };
-
   const handleCreateEvent = () => {
     navigate("/add-event"); // "/add-event" rotasına yönlendirme yap
   };
@@ -57,7 +52,6 @@ function SelectedDayEvents() {
           <h3>Seçilen Tarih</h3>
           <CustomDatePicker onDateChange={setSelectedDate} />
           <CreateEventCard onCreateEvent={handleCreateEvent} />
-          <Button text="Kendi Etkinliklerim" onClick={handleMyEventsClick} />
         </aside>
         <main className="selected-day-main">
           <h3>{formatDate(selectedDate)} Tarihli Etkinlikler</h3>

@@ -1,12 +1,13 @@
 import { useState } from "react";
-import axios from "axios";
-import { toast } from "react-toastify";
+import axios from "axios"; // Backend API'sine veri göndermek için HTTP isteklerini yapmakta kullanılır.
+import { toast } from "react-toastify"; // Kullanıcıya başarılı veya başarısız işlem bildirimleri göstermek için kullanılır.
 import { useNavigate } from "react-router-dom";
+import "./AddEventPage.css";
+import Button from "../../Components/Button/Button";
 
 function AddEventPage() {
   const navigate = useNavigate();
 
-  // İlgi Alanları (Kategori isimleri)
   const interestOptions = [
     "Spor ve Fitness",
     "Sanat ve Kültür",
@@ -21,33 +22,28 @@ function AddEventPage() {
     Description: "",
     EventDate: "",
     EventStartTime: "",
-    EventEndTime: "",
+    EventFinishTime: "",
     Location: "",
-    selectedCategory: "", // Seçilen kategori adı
+    selectedCategory: "",
     EventPicture: null,
   });
 
-  // Form verilerini güncelle
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Kategori seçimi
   const handleCategoryChange = (e) => {
     setFormData({ ...formData, selectedCategory: e.target.value });
   };
 
-  // Resim dosyasını güncelle
   const handleFileChange = (e) => {
     setFormData({ ...formData, EventPicture: e.target.files[0] });
   };
 
-  // Formu gönder
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Form verilerini hazırlayın
     const data = new FormData();
     data.append("EventName", formData.EventName);
     data.append("Description", formData.Description);
@@ -55,7 +51,7 @@ function AddEventPage() {
     data.append("EventStartTime", formData.EventStartTime);
     data.append("EventFinishTime", formData.EventFinishTime);
     data.append("Location", formData.Location);
-    data.append("CategoryName", formData.selectedCategory); // Seçilen kategori ismi gönderiliyor
+    data.append("CategoryName", formData.selectedCategory);
     if (formData.EventPicture) {
       data.append("EventPicture", formData.EventPicture);
     }
@@ -72,7 +68,7 @@ function AddEventPage() {
 
       setTimeout(() => {
         navigate("/dashboard");
-      }, 3000);
+      }, 2000);
     } catch (error) {
       console.error(
         "Etkinlik oluşturulurken hata oluştu: ",
@@ -90,11 +86,11 @@ function AddEventPage() {
   };
 
   return (
-    <div style={{ padding: "20px", maxWidth: "500px", margin: "0 auto" }}>
+    <div className="add-event-page">
       <h2>Etkinlik Oluştur</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="add-event-form" onSubmit={handleSubmit}>
         <div>
-          <label>Etkinlik Adı:</label>
+          <label>Etkinlik Adı</label>
           <input
             type="text"
             name="EventName"
@@ -104,15 +100,16 @@ function AddEventPage() {
           />
         </div>
         <div>
-          <label>Açıklama:</label>
+          <label>Açıklama</label>
           <textarea
             name="Description"
             value={formData.Description}
             onChange={handleChange}
+            rows="3"
           />
         </div>
         <div>
-          <label>Tarih:</label>
+          <label>Tarih</label>
           <input
             type="date"
             name="EventDate"
@@ -122,7 +119,7 @@ function AddEventPage() {
           />
         </div>
         <div>
-          <label>Başlangıç Saati:</label>
+          <label>Başlangıç Saati</label>
           <input
             type="time"
             name="EventStartTime"
@@ -132,7 +129,7 @@ function AddEventPage() {
           />
         </div>
         <div>
-          <label>Bitiş Saati:</label>
+          <label>Bitiş Saati</label>
           <input
             type="time"
             name="EventFinishTime"
@@ -142,7 +139,7 @@ function AddEventPage() {
           />
         </div>
         <div>
-          <label>Lokasyon:</label>
+          <label>Lokasyon</label>
           <input
             type="text"
             name="Location"
@@ -152,29 +149,28 @@ function AddEventPage() {
           />
         </div>
         <div>
-          <label>Kategori:</label>
-          <div>
+          <label>Kategori</label>
+          <div className="category-options">
             {interestOptions.map((category) => (
               <div key={category}>
-                <label>
-                  <input
-                    type="radio"
-                    name="selectedCategory" // Aynı name ile yalnızca bir seçim yapılabilir
-                    value={category}
-                    checked={formData.selectedCategory === category}
-                    onChange={handleCategoryChange}
-                  />
-                  {category}
-                </label>
+                <input
+                  type="radio"
+                  id={category}
+                  name="selectedCategory"
+                  value={category}
+                  checked={formData.selectedCategory === category}
+                  onChange={handleCategoryChange}
+                />
+                <label htmlFor={category}>{category}</label>
               </div>
             ))}
           </div>
         </div>
         <div>
-          <label>Etkinlik Resmi:</label>
+          <label>Etkinlik Resmi</label>
           <input type="file" onChange={handleFileChange} />
         </div>
-        <button type="submit">Etkinlik Oluştur</button>
+        <Button text="Etkinlik Oluştur" variant="toggle" type="submit" />
       </form>
     </div>
   );
