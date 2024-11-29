@@ -7,7 +7,8 @@ import {
   FaMapMarkerAlt,
   FaPhone,
   FaBirthdayCake,
-} from "react-icons/fa";
+  FaStar,
+} from "react-icons/fa"; // Puan ikonu için FaStar eklendi
 import { IoPersonCircle } from "react-icons/io5";
 import "./UserProfilePage.css";
 
@@ -71,6 +72,10 @@ function ProfilePage() {
         </p>
         <p>
           <strong>İlgi alanları:</strong> {profile.interests.join(", ")}
+        </p>
+        <p>
+          <FaStar className="profile-icon" />
+          <strong>Toplam Puan:</strong> {profile.totalPoints}
         </p>
       </div>
       <Link to="/profile/edit">
