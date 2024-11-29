@@ -12,6 +12,9 @@ import ResetPasswordPage from "./Pages/ResetPasswordPage/ResetPasswordPage";
 import { AuthProvider } from "./context/AuthContext";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import EventDetail from "./Pages/EventDetail/EventDetail";
+import AddEventPage from "./Pages/AddEventPage/AddEventPage";
+import MyEvents from "./Pages/MyEvents/MyEvents";
+import UpdateEvent from "./Pages/UpdateEvent/UpdateEvent";
 
 function App() {
   return (
@@ -33,6 +36,9 @@ function App() {
           <Route path="/reset-password" element={<ResetPasswordPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/event-detail" element={<EventDetail />} />
+          <Route path="/add-event" element={ <AddEventPage />}/>
+          <Route path="/my-events" element={<MyEvents />}/>
+          <Route path="/update-event/:id" element={<UpdateEvent />} />
         </Routes>
       </Router>
     </AuthProvider>

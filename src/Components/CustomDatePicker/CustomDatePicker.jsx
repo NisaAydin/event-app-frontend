@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css"; // Varsayılan CSS
 import "./CustomDatePicker.css"; // Özel CSS
@@ -9,7 +10,7 @@ function CustomDatePicker({ onDateChange }) {
   const handleDateChange = (date) => {
     setSelectedDate(date);
     if (onDateChange) {
-      onDateChange(date);
+      onDateChange(date); // Tarihi üst bileşene gönder
     }
   };
 
