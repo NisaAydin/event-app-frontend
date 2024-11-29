@@ -70,18 +70,13 @@ function AddEventPage() {
         navigate("/dashboard");
       }, 2000);
     } catch (error) {
-      console.error(
-        "Etkinlik oluşturulurken hata oluştu: ",
-        error.response?.data || error.message
-      );
+      const errorMessage = error.response?.data?.error || "Bir hata oluştu.";
+      console.error("Etkinlik oluşturulurken hata oluştu: ", errorMessage);
 
-      toast.error(
-        "Etkinlik oluşturulurken bir hata oluştu. Lütfen tekrar deneyin.",
-        {
-          position: "top-right",
-          autoClose: 3000,
-        }
-      );
+      toast.error(errorMessage, {
+        position: "top-right",
+        autoClose: 3000,
+      });
     }
   };
 

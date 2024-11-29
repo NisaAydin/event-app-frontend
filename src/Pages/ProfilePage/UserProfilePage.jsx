@@ -44,6 +44,10 @@ function ProfilePage() {
       />
       <div className="profile-info">
         <p>
+          <FaStar className="profile-icon" />
+          <strong>Toplam Puan:</strong> {profile.totalPoints}
+        </p>
+        <p>
           <IoPersonCircle className="profile-icon" />
           <strong>Kullanıcı Adı:</strong> {profile.Username}
         </p>
@@ -72,10 +76,6 @@ function ProfilePage() {
         </p>
         <p>
           <strong>İlgi alanları:</strong> {profile.interests.join(", ")}
-        </p>
-        <p>
-          <FaStar className="profile-icon" />
-          <strong>Toplam Puan:</strong> {profile.totalPoints}
         </p>
       </div>
       <Link to="/profile/edit">

@@ -119,7 +119,7 @@ function Navbar() {
         <Link to="/maps" className="user-navbar-icon">
           <FaMapMarkerAlt />
         </Link>
-        <Link to="/messages" className="user-navbar-icon">
+        <Link to="/chat-list" className="user-navbar-icon">
           <FiMessageSquare />
         </Link>
         <Link to="/notifications" className="user-navbar-icon">
