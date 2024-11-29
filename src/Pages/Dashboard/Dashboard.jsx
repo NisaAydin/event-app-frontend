@@ -1,8 +1,9 @@
 import { useState } from "react";
 import SelectedDayEvents from "../../Components/SelectedDayEvents/SelectedDayEvents";
-import EventsSection from "../EventsSection/EventsSection";
 
 import "./Dashboard.css";
+import EventRecommendation from "../EventRecommendation/EventRecommendation";
+import InterestBasedEvents from "../InterestBasedEvents/InterestBasedEvents";
 
 function Dashboard() {
   // Sahte Etkinlik Verileri
@@ -19,7 +20,8 @@ function Dashboard() {
         setSelectedDate={setSelectedDate}
         onCreateEvent={handleCreateEvent}
       />
-      <EventsSection />
+      <EventRecommendation />
+      <InterestBasedEvents />
     </div>
   );
 }
