@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import EventCard from "../../Components/EventCard/EventCard";
 import "./EventsSection.css";

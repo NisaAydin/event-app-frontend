@@ -1,17 +1,19 @@
 .chat-container {
   display: flex;
-  width: 100%;
-  height: 100vh;
+  width: 100vw; /* Tüm genişlik */
+  height: 100vh; /* Tüm yükseklik */
   font-family: "Poppins", sans-serif;
+  background-color: #1f1f2e; /* Genel arka plan */
+  overflow: hidden; /* Kaymaların önlenmesi */
 }
 
 .chat-sidebar {
-  width: 30%;
+  width: 30%; /* Sabit genişlik */
   border-right: 1px solid #434955;
   padding: 20px;
   background-color: #1f1f2e;
   color: #f8f9fa;
-  overflow-y: auto;
+  overflow-y: auto; /* Dikey kaydırma */
 }
 
 .chat-sidebar h3 {
@@ -69,12 +71,13 @@
 }
 
 .chat-main {
-  width: 70%;
-  padding: 10px;
-  background-color: transparent;
+  flex: 1; /* Geri kalan tüm alanı kapla */
+  padding: 20px;
+  background-color: #282c34;
   color: #f8f9fa;
   display: flex;
   flex-direction: column;
+  overflow-y: hidden; /* Kaymayı engelle */
 }
 
 .chat-main h3 {
@@ -84,13 +87,12 @@
 }
 
 .message-list {
-  height: calc(100vh - 200px);
-  overflow-y: auto;
+  flex: 1; /* Ana alanın büyük kısmını kapla */
+  overflow-y: auto; /* Kaydırma */
   padding: 15px;
   border-radius: 8px;
   background-color: #1f1f2e;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  margin-bottom: 10px;
 }
 
 .message {
@@ -153,7 +155,6 @@
   margin-top: 20px;
   display: flex;
   gap: 15px;
-  margin-top: auto;
 }
 
 .message-input {

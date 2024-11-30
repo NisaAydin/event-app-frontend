@@ -45,7 +45,7 @@ function EventDetail() {
         { withCredentials: true }
       );
 
-      if (!sessionResponse.data.isLoggedIn) {
+      if (!sessionResponse.data.authenticated) {
         // Giriş yapmamışsa giriş sayfasına yönlendir
         toast.warning("Lütfen etkinliğe katılmadan önce giriş yapın.", {
           position: "top-right",
@@ -56,7 +56,7 @@ function EventDetail() {
           draggable: true,
           progress: undefined,
         });
-        navigate("/login"); // Login sayfasına yönlendirme
+        navigate("/signin"); // Login sayfasına yönlendirme
         return;
       }
 
@@ -106,6 +106,54 @@ function EventDetail() {
           }
         );
       }
+    }
+  };
+  console.log("Bura");
+
+  // Etkinlikten Çıkma Butonu
+  const handleLeaveEvent = async () => {
+    console.log("Bura2");
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/participate/leaveEvent", // Backend endpoint
+        { eventId: event.id },
+        { withCredentials: true }
+      );
+
+      console.log("Bura3");
+      console.log("Gönderilen eventId:", event.id);
+      console.log("Etkinlikten çıkış başarılı:", response.data);
+
+      // Kullanıcı etkinlikten ayrıldıktan sonra state güncellenir
+      setIsJoined(false);
+      toast.success("Etkinlikten başarıyla ayrıldınız.", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    } catch (error) {
+      console.error(
+        "Etkinlikten çıkış sırasında hata oluştu:",
+        error.response?.data || error.message
+      );
+      toast.error(
+        `Etkinlikten çıkış sırasında bir hata oluştu: ${
+          error.response?.data?.message || error.message
+        }`,
+        {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        }
+      );
     }
   };
 
@@ -171,6 +219,7 @@ function EventDetail() {
         {isJoined ? (
           <Button
             text={"Katıldınız"}
+            onClick={handleLeaveEvent} // Etkinlikten çık
             variant="toggle"
             className="joined-event-button"
             disabled={true} // Buton devre dışı
