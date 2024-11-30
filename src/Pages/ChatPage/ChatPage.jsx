@@ -97,7 +97,7 @@ function ChatPage() {
                 }`}
               >
                 <h4 className="chat-item-title">{chat.EventName}</h4>
-                <p className="chat-item-description">{chat.Description}</p>
+
                 <small className="chat-item-date">
                   Tarih: {new Date(chat.EventDate).toLocaleDateString()}
                 </small>
