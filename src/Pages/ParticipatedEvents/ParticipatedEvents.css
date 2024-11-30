@@ -1,0 +1,23 @@
+.participated-events-container {
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .participated-events-container h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .participated-events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .error-message {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+  }
+  

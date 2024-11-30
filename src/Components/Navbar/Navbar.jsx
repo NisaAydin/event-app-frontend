@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoPerson, IoNotificationsOutline } from "react-icons/io5";
 import { FiMessageSquare } from "react-icons/fi";
@@ -113,8 +113,8 @@ function Navbar() {
         <Link to={"/my-events"} className="user-navbar-link">
           Kendi Etkinliklerim
         </Link>
-        <Link to="/onay" className="user-navbar-icon">
-          <FaUserClock />
+        <Link to={"/participated-events"} className="user-navbar-icon">
+          Katıldığım Etkinlikler <FaUserClock />
         </Link>
         <Link to="/maps" className="user-navbar-icon">
           <FaMapMarkerAlt />
