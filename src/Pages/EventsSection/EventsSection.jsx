@@ -4,50 +4,37 @@ import EventCard from "../../Components/EventCard/EventCard";
 import "./EventsSection.css";
 
 function EventsSection() {
-  const trendingEvents = [
-    {
-      id: 1,
-      Category: { Category: "Sanat ve Kültür" }, // Kategori nesnesi
-      EventName: "Timsah Ateşi", // Başlık
-      Description: "Sanat dolu bir tiyatro oyunu.",
-      Creator: { Name: "Swipe or Swap" }, // Etkinliği düzenleyen kişi
-      EventDate: "2024-12-01",
-      EventStartTime: "19:00",
-      Location: "İstanbul",
-      EventPicture:
-        "https://cdn.bubilet.com.tr/files/Etkinlik/timsah-atesi-oyunu-99533.jpg",
-    },
-    {
-      id: 2,
-      Category: { Category: "Sağlıklı Yaşam" },
-      EventName: "Meditasyon ve Yoga",
-      Description: "Rahatlamak ve enerji kazanmak için.",
-      Creator: { Name: "Misha" },
-      EventDate: "2024-12-20",
-      EventStartTime: "19:00",
-      Location: "İstanbul",
-      EventPicture:
-        "https://blog.meditopia.com/wp-content/uploads/2021/09/NEW-4-2.jpg",
-    },
-    {
-      id: 3,
-      Category: { Category: "Sanat ve Kültür" },
-      EventName: "Van Gogh Sergisi",
-      Description:
-        "Van Gogh’un eşsiz fırça darbeleriyle hayat bulan tabloları.",
-      Creator: { Name: "Larina" },
-      EventDate: "2024-12-01",
-      EventStartTime: "21:00",
-      Location: "İstanbul",
-      EventPicture:
-        "https://radyorjinal.com/wp-content/uploads/2022/06/van-gogh-dijital-sergisi-acildi-uOqGwd2i-450x300.jpg",
-    },
-  ];
-
+  const [trendingEvents, setTrendingEvents] = useState([]);
   const [upcomingEvents, setUpcomingEvents] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const [loadingTrending, setLoadingTrending] = useState(true);
+  const [loadingUpcoming, setLoadingUpcoming] = useState(true);
+  const [errorTrending, setErrorTrending] = useState("");
+  const [errorUpcoming, setErrorUpcoming] = useState("");
 
+  // Fetch Trending Events
+  useEffect(() => {
+    const fetchTrendingEvents = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/event/trending-events");
+        setTrendingEvents(response.data);
+      } catch (error) {
+        console.error(
+          "Trend etkinlikler alınırken hata oluştu:",
+          error.response ? error.response.data : error.message
+        );
+        setErrorTrending(
+          error.response?.data?.error ||
+            "Trend etkinlikler yüklenirken bir hata oluştu."
+        );
+      } finally {
+        setLoadingTrending(false);
+      }
+    };
+
+    fetchTrendingEvents();
+  }, []);
+
+  // Fetch Upcoming Events
   useEffect(() => {
     const fetchUpcomingEvents = async () => {
       try {
@@ -60,12 +47,12 @@ function EventsSection() {
           "Yaklaşan etkinlikler alınırken hata oluştu:",
           error.response ? error.response.data : error.message
         );
-        setError(
+        setErrorUpcoming(
           error.response?.data?.error ||
             "Yaklaşan etkinlikler yüklenirken bir hata oluştu."
         );
       } finally {
-        setLoading(false);
+        setLoadingUpcoming(false);
       }
     };
 
@@ -74,22 +61,30 @@ function EventsSection() {
 
   return (
     <div className="events-section">
+      {/* Trend Events Section */}
       <div className="section">
         <h2 className="section-title">Trend Etkinlikler</h2>
         <div className="events-grid">
-          {trendingEvents.map((event) => (
-            <EventCard key={event.id} event={event} />
-          ))}
+          {loadingTrending ? (
+            <p>Yükleniyor...</p>
+          ) : errorTrending ? (
+            <p>{errorTrending}</p>
+          ) : (
+            trendingEvents.map((event) => (
+              <EventCard key={event.id} event={event} />
+            ))
+          )}
         </div>
       </div>
 
+      {/* Upcoming Events Section */}
       <div className="section">
         <h2 className="section-title">Yaklaşan Etkinlikler</h2>
         <div className="events-grid">
-          {loading ? (
+          {loadingUpcoming ? (
             <p>Yükleniyor...</p>
-          ) : error ? (
-            <p>{error}</p>
+          ) : errorUpcoming ? (
+            <p>{errorUpcoming}</p>
           ) : (
             upcomingEvents.map((event) => (
               <EventCard key={event.id} event={event} />

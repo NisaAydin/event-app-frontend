@@ -26,7 +26,10 @@ function EventDetail() {
         );
         setIsJoined(response.data.isParticipated); // Backend'den gelen duruma göre state'i güncelle
       } catch (error) {
-        console.error("Katılım durumu kontrol edilirken bir hata oluştu:", error);
+        console.error(
+          "Katılım durumu kontrol edilirken bir hata oluştu:",
+          error
+        );
       }
     };
 
@@ -36,6 +39,28 @@ function EventDetail() {
   // Etkinliğe Katılma Butonu
   const handleJoinEvent = async () => {
     try {
+      // Kullanıcı oturum durumunu kontrol et
+      const sessionResponse = await axios.get(
+        "http://localhost:3000/auth/check-session",
+        { withCredentials: true }
+      );
+
+      if (!sessionResponse.data.isLoggedIn) {
+        // Giriş yapmamışsa giriş sayfasına yönlendir
+        toast.warning("Lütfen etkinliğe katılmadan önce giriş yapın.", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        navigate("/login"); // Login sayfasına yönlendirme
+        return;
+      }
+
+      // Kullanıcı oturum açmışsa etkinliğe katıl
       const response = await axios.post(
         "http://localhost:3000/participate/participateInEvent", // Backend API'si
         { eventId: event.id }, // Gönderilen veri
@@ -54,20 +79,33 @@ function EventDetail() {
 
       setIsJoined(true); // Kullanıcı katıldıysa durumu güncelle
     } catch (error) {
-      toast.error(
-        `Etkinliğe katılma sırasında bir hata oluştu: ${
-          error.response?.data?.message || error.message
-        }`,
-        {
+      if (error.response?.status === 401) {
+        toast.warning("Lütfen giriş yapın.", {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-        }
-      );
+        });
+        navigate("/signin");
+      } else {
+        toast.error(
+          `Etkinliğe katılma sırasında bir hata oluştu: ${
+            error.response?.data?.message || error.message
+          }`,
+          {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          }
+        );
+      }
     }
   };
 
