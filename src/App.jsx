@@ -15,7 +15,7 @@ import EventDetail from "./Pages/EventDetail/EventDetail";
 import AddEventPage from "./Pages/AddEventPage/AddEventPage";
 import MyEvents from "./Pages/MyEvents/MyEvents";
 import UpdateEvent from "./Pages/UpdateEvent/UpdateEvent";
-import ChatListPage from "./Pages/ChatListPage/ChatListPage";
+import ChatPage from "./Pages/ChatPage/ChatPage";
 
 function App() {
   return (
@@ -40,7 +40,7 @@ function App() {
           <Route path="/add-event" element={<AddEventPage />} />
           <Route path="/my-events" element={<MyEvents />} />
           <Route path="/update-event/:id" element={<UpdateEvent />} />
-          <Route path="/chat-list" element={<ChatListPage />} />
+          <Route path="/chat-list" element={<ChatPage />} />
         </Routes>
       </Router>
     </AuthProvider>
