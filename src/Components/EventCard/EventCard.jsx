@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./EventCard.css";
@@ -38,7 +39,7 @@ function EventCard({ event }) {
         </p>
 
         <p className="event-creator">
-          Etkinliği Düzenleyen: {event.Creator?.Name || "Bilinmiyor"}
+          Etkinliği Düzenleyen: {event.CreatorName || "Bilinmiyor"}
         </p>
 
         {/* Tarih ve Zaman */}
