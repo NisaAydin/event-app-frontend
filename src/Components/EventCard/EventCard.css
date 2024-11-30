@@ -10,7 +10,7 @@
   justify-content: space-between;
   color: #ffffff;
   width: 300px;
-  height: 400px;
+  height: 460px;
 }
 
 .event-card:hover {
@@ -27,14 +27,13 @@
   padding: 5px 10px;
   border-radius: 20px;
   display: inline-block;
-  margin-bottom: 10px; /* Başlık ile boşluk */
+  margin-bottom: 5px; /* Başlık ile boşluk */
 }
 
 /* Görsel */
 .event-image {
   width: 100%;
-  min-height: 150px;
-  height: 150px;
+  height: 200px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
@@ -66,11 +65,19 @@
   align-items: center;
   font-size: 0.9rem;
   color: #b0b0b0;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
 .event-icon {
   margin-right: 8px;
   font-size: 1rem;
   color: #00b4d8;
+}
+.event-description {
+  max-height: 50px; /* Maksimum yüksekliği belirtiyoruz */
+  overflow: hidden; /* Taşan metni gizliyoruz */
+  text-overflow: ellipsis; /* Taşan metni üç nokta ile gösteriyoruz */
+  white-space: nowrap; /* Metni tek satırda tutuyoruz (isteğe bağlı) */
+  color: #d1d1d1; /* Metin rengi */
+  font-size: 0.9rem; /* Yazı boyutu */
 }

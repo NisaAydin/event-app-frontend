@@ -41,7 +41,8 @@ function TodayEventsCard({ event }) {
           <div className="today-event-date-time">
             <p className="today-event-date">
               <IoCalendarOutline className="today-event-icon" />{" "}
-              {new Date(event.EventDate).toLocaleDateString("tr-TR") || "Tarih belirtilmemiş"}
+              {new Date(event.EventDate).toLocaleDateString("tr-TR") ||
+                "Tarih belirtilmemiş"}
             </p>
             <p className="today-event-time">
               <IoTimeOutline className="today-event-icon" />{" "}

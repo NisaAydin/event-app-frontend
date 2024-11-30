@@ -9,28 +9,35 @@ import { useNavigate } from "react-router-dom";
 
 function SelectedDayEvents() {
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [events, setEvents] = useState([]); // Backend'den gelen etkinlikler
+  const [events, setEvents] = useState([]);
   const navigate = useNavigate();
 
-  // Sahte Etkinlik Verileri
-  // Filtreleme
+  // Tarihi backend'e uygun formatta döndür
+  const getFormattedDate = (date) => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // Aylar 0 tabanlı
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
+
   useEffect(() => {
     const fetchEvents = async () => {
       try {
+        const formattedDate = getFormattedDate(selectedDate); // Tarihi formatla
         const response = await axios.post(
-          "http://localhost:3000/event/events-by-date", // Backend URL
-          { date: selectedDate.toISOString().split("T")[0] }, // Tarihi backend'e gönder
-          { withCredentials: true } // Cookie gönderim desteği
+          "http://localhost:3000/event/events-by-date",
+          { date: formattedDate },
+          { withCredentials: true }
         );
-        setEvents(response.data.events); // Gelen etkinlikleri state'e kaydet
+        setEvents(response.data.events);
       } catch (error) {
         console.error("Etkinlikler alınırken bir hata oluştu:", error.message);
-        setEvents([]); // Hata durumunda boş liste
+        setEvents([]);
       }
     };
 
     fetchEvents();
-  }, [selectedDate]); // Seçilen tarih değiştikçe API isteği yapılır
+  }, [selectedDate]);
 
   // Tarihi formatla
   const formatDate = (date) => {
@@ -42,7 +49,7 @@ function SelectedDayEvents() {
   };
 
   const handleCreateEvent = () => {
-    navigate("/add-event"); // "/add-event" rotasına yönlendirme yap
+    navigate("/add-event");
   };
 
   return (
