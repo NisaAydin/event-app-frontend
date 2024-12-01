@@ -104,11 +104,6 @@ function Navbar() {
             Event<span className="highlight">Hub</span>
           </span>
         </Link>
-        <input
-          type="text"
-          className="user-navbar-search"
-          placeholder="Search events..."
-        />
       </div>
       <div className="user-navbar-right">
         <Link to={"/my-events"} className="user-navbar-link">
