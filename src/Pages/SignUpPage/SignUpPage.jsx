@@ -103,7 +103,7 @@ function SignUpPage() {
   return (
     <div className="signup-page">
       <ToastContainer />
-      <h1 className="signup-title">Sign Up</h1>
+      <h1 className="signup-title">Kayıt Ol</h1>
       <form className="signup-form" onSubmit={handleSubmit}>
         <div className="form-row">
           <div className="form-group">
@@ -231,7 +231,7 @@ function SignUpPage() {
             required
           />
         </div>
-        <Button text="Sign Up" variant="primary" type="submit" />
+        <Button text="Kayıt Ol" variant="primary" type="submit" />
       </form>
       <p className="login-redirect">
         Zaten üye misiniz ?{" "}

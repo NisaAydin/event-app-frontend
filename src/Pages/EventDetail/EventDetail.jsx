@@ -189,9 +189,6 @@ function EventDetail() {
         />
         <div className="event-detail-overlay">
           <h1 className="event-detail-title">{event.EventName}</h1>
-          <p className="event-detail-category">
-            {event.Category?.Category || "Kategori belirtilmedi"}
-          </p>
         </div>
       </div>
 

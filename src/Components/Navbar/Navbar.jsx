@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { IoPerson, IoNotificationsOutline } from "react-icons/io5";
 import { FiMessageSquare } from "react-icons/fi";
 import { FaMapMarkerAlt, FaUserClock } from "react-icons/fa";
+import { RiUserStarLine } from "react-icons/ri";
 import axios from "axios";
 import { useAuth } from "../../context/AuthContext";
 import Button from "../Button/Button";
@@ -73,21 +74,21 @@ function Navbar() {
         </Link>
         <ul className="navbar-menu">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Ana Sayfa</Link>
           </li>
           <li>
-            <Link to="/events">Events</Link>
+            <Link to="/events">Etkinlikler</Link>
           </li>
           <li>
-            <Link to="/review">Review</Link>
+            <Link to="/review">Görüşler</Link>
           </li>
         </ul>
         <div className="navbar-login">
           <Link to="/signin">
-            <Button text="Sign In" variant="secondary" />
+            <Button text="Giriş Yap" variant="secondary" />
           </Link>
           <Link to="/signup">
-            <Button text="Sign Up" variant="primary" icon={<IoPerson />} />
+            <Button text="Kayıt Ol" variant="primary" icon={<IoPerson />} />
           </Link>
         </div>
       </nav>
@@ -114,16 +115,13 @@ function Navbar() {
           Kendi Etkinliklerim
         </Link>
         <Link to={"/participated-events"} className="user-navbar-icon">
-          Katıldığım Etkinlikler <FaUserClock />
+          <RiUserStarLine />
         </Link>
         <Link to="/maps" className="user-navbar-icon">
           <FaMapMarkerAlt />
         </Link>
         <Link to="/chat-list" className="user-navbar-icon">
           <FiMessageSquare />
-        </Link>
-        <Link to="/notifications" className="user-navbar-icon">
-          <IoNotificationsOutline />
         </Link>
 
         <div className="user-navbar-profile" onClick={toggleDropdown}>

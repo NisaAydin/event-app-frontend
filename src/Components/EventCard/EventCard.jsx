@@ -5,6 +5,7 @@ import {
   IoCalendarOutline,
   IoTimeOutline,
   IoLocationOutline,
+  IoCreateOutline,
 } from "react-icons/io5";
 
 function EventCard({ event }) {
@@ -22,13 +23,11 @@ function EventCard({ event }) {
         alt={event.EventName || "Etkinlik"}
         className="event-image"
       />
-
+      {/* Kategori */}
+      <div className="event-category">
+        {event.Category?.Category || "Kategori belirtilmedi"}
+      </div>
       <div className="event-info">
-        {/* Kategori */}
-        <div className="event-category">
-          {event.Category?.Category || "Kategori belirtilmedi"}
-        </div>
-
         {/* Başlık */}
         <h3 className="event-title">{event.EventName || "Başlık Yok"}</h3>
 
@@ -38,7 +37,8 @@ function EventCard({ event }) {
         </p>
 
         <p className="event-creator">
-          Etkinliği Düzenleyen: {event.CreatorName || "Bilinmiyor"}
+          <IoCreateOutline className="event-icon" />
+          {event.CreatorName || "Bilinmiyor"}
         </p>
 
         {/* Tarih ve Zaman */}

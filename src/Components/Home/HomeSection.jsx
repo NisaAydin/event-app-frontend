@@ -13,18 +13,18 @@ function HomeSection() {
       <div className="hero-content">
         <div className="hero-left">
           <div className="discount-tag">
-            🎉 <span>Join Now for Exclusive Benefits</span>
+            🎉 <span>Katıl ve Ayrıcalıklardan Yararlan!</span>
           </div>
           <h1 className="hero-title">
-            Discover <span>Exciting Events</span> Around You
+            Çevrenizdeki <span>Heyecan Verici</span> Etkinlikleri Keşfedin
           </h1>
           <p className="hero-description">
-            Explore curated events based on your interests, meet new people, and
-            create unforgettable memories. Start your journey with EventHub
-            today!
+            İlgi alanlarınıza göre düzenlenmiş etkinlikleri keşfedin, yeni
+            insanlarla tanışın ve unutulmaz anılar biriktirin. EventHub ile
+            yolculuğunuza bugün başlayın!
           </p>
           <button className="hero-button" onClick={handleGetStartedClick}>
-            Get Started
+            Hemen Başla
           </button>
         </div>
         <div className="hero-right">

@@ -8,6 +8,7 @@
   margin: 20px auto;
   max-width: 900px;
   min-width: 700px;
+  margin-top: 70px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -109,5 +110,3 @@
 .join-event-button {
   align-self: flex-end; /* Butonu sağa yaslar */
 }
-
-

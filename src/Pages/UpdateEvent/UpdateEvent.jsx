@@ -158,6 +158,16 @@ function UpdateEvent() {
           />
         </div>
         <div className="update-event-field">
+          <label>Etkinlik Konumu:</label>
+          <input
+            type="text"
+            name="Location"
+            value={event.Location}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="update-event-field">
           <label>Kategori:</label>
           <div className="category-options">
             {interestOptions.map((category) => (

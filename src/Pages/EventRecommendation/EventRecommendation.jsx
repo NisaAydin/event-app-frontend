@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import EventCard from "../../Components/EventCard/EventCard";
 import "./EventRecommendation.css";
+import Slider from "../../Components/Slider/Slider";
 
 function EventRecommendation() {
   const [events, setEvents] = useState([]);
@@ -34,11 +35,14 @@ function EventRecommendation() {
       <h2>Lokasyonunuza Göre Yakın Etkinlikler</h2>
       {error && <p className="error-message">{error}</p>}
 
-      <div className="event-list">
-        {events.length > 0
-          ? events.map((event) => <EventCard key={event.id} event={event} />)
-          : !error && <p>Yakın çevrenizde önerilen etkinlikler aranıyor...</p>}
-      </div>
+      {events.length > 0 ? (
+        <Slider
+          items={events} // Slider'a gönderilen etkinlik verisi
+          renderItem={(event, index) => <EventCard key={index} event={event} />}
+        />
+      ) : (
+        !error && <p>Yakın çevrenizde önerilen etkinlikler aranıyor...</p>
+      )}
     </div>
   );
 }

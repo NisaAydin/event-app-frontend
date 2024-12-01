@@ -16,7 +16,6 @@ function ReviewCard({ review }) {
         />
         <div>
           <h4 className="review-user-name">{review.name}</h4>
-          <p className="review-user-role">{review.role}</p>
         </div>
       </div>
     </div>

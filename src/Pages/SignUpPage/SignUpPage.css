@@ -116,3 +116,14 @@ body {
   color: #0077a7;
   text-decoration: underline;
 }
+.interest-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.interest-option {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
