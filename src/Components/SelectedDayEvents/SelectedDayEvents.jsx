@@ -12,10 +12,9 @@ function SelectedDayEvents() {
   const [events, setEvents] = useState([]);
   const navigate = useNavigate();
 
-  // Tarihi backend'e uygun formatta döndür
   const getFormattedDate = (date) => {
     const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, "0"); // Aylar 0 tabanlı
+    const month = String(date.getMonth() + 1).padStart(2, "0");
     const day = String(date.getDate()).padStart(2, "0");
     return `${year}-${month}-${day}`;
   };
@@ -23,7 +22,7 @@ function SelectedDayEvents() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const formattedDate = getFormattedDate(selectedDate); // Tarihi formatla
+        const formattedDate = getFormattedDate(selectedDate);
         const response = await axios.post(
           "http://localhost:3000/event/events-by-date",
           { date: formattedDate },
@@ -39,7 +38,6 @@ function SelectedDayEvents() {
     fetchEvents();
   }, [selectedDate]);
 
-  // Tarihi formatla
   const formatDate = (date) => {
     return date.toLocaleDateString("tr-TR", {
       year: "numeric",

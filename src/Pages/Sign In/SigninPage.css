@@ -1,11 +1,11 @@
 body {
-  margin: 0; /* Kenarlardan boşluk kaldır */
+  margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center; /* Yatayda ortala */
-  align-items: center; /* Dikeyde ortala */
-  min-height: 100vh; /* Ekranın tamamını kapla */
-  background: linear-gradient(135deg, #1f1f2e, #282c34); /* Arka plan */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1f1f2e, #282c34);
 }
 .signin-page {
   max-width: 600px;

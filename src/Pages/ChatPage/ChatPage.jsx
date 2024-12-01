@@ -9,9 +9,8 @@ function ChatPage() {
   const [newMessage, setNewMessage] = useState("");
   const [currentUser, setCurrentUser] = useState(null);
 
-  const messageEndRef = useRef(null); // Mesajların sonuna referans
+  const messageEndRef = useRef(null);
 
-  // Kullanıcının katıldığı etkinlikleri getir
   useEffect(() => {
     const fetchChats = async () => {
       try {
@@ -31,7 +30,6 @@ function ChatPage() {
     fetchChats();
   }, []);
 
-  // Seçilen etkinlik için mesajları getir
   useEffect(() => {
     if (!selectedEventId) return;
 
@@ -54,14 +52,12 @@ function ChatPage() {
     fetchMessages();
   }, [selectedEventId]);
 
-  // Mesaj listesi güncellendiğinde otomatik olarak en alta kaydır
   useEffect(() => {
     if (messageEndRef.current) {
       messageEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
 
-  // Mesaj gönder
   const handleSendMessage = async () => {
     if (!newMessage.trim()) return;
 
@@ -72,8 +68,8 @@ function ChatPage() {
         { withCredentials: true }
       );
 
-      setMessages([...messages, response.data.data]); // Yeni mesajı ekle
-      setNewMessage(""); // Input temizle
+      setMessages([...messages, response.data.data]);
+      setNewMessage("");
     } catch (error) {
       console.error(
         "Mesaj gönderilemedi:",
@@ -120,7 +116,6 @@ function ChatPage() {
                     msg.SendTime
                   ).toLocaleDateString();
 
-                  // Bir önceki mesajın tarihi (ilk mesaj için null olacak)
                   const previousMessageDate =
                     index > 0
                       ? new Date(
@@ -130,7 +125,6 @@ function ChatPage() {
 
                   return (
                     <div key={msg.id}>
-                      {/* Tarihi yalnızca önceki mesajın tarihinden farklıysa ekle */}
                       {currentMessageDate !== previousMessageDate && (
                         <div className="message-date">
                           <span>{currentMessageDate}</span>
@@ -170,7 +164,7 @@ function ChatPage() {
               ) : (
                 <p>Bu etkinlik için mesaj bulunmuyor.</p>
               )}
-              <div ref={messageEndRef} /> {/* Listenin sonuna referans */}
+              <div ref={messageEndRef} />
             </div>
 
             <div className="message-input-container">

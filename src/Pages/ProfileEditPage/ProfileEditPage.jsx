@@ -95,7 +95,7 @@ function ProfileEditPage() {
     data.append("birthDate", formData.birthDate);
     data.append("phoneNumber", formData.phoneNumber);
     data.append("username", formData.username);
-    data.append("interests", JSON.stringify(formData.interests)); // İlgi alanlarını JSON olarak gönder
+    data.append("interests", JSON.stringify(formData.interests));
 
     if (formData.profilePicture) {
       data.append("profilePicture", formData.profilePicture);
@@ -107,10 +107,10 @@ function ProfileEditPage() {
       });
       toast.success("Güncelleme başarılı!.", {
         position: "top-right",
-        autoClose: 3000, // 3 saniye sonra kapanır
-      }); // Başarı mesajı
+        autoClose: 3000,
+      });
       setTimeout(() => {
-        navigate("/profile"); // 3 saniye sonra yönlendir
+        navigate("/profile");
       }, 3000);
     } catch (error) {
       console.error(
@@ -119,14 +119,14 @@ function ProfileEditPage() {
       );
       toast.error("Kayıt sırasında hata oluştu. Lütfen tekrar deneyin.", {
         position: "top-right",
-        autoClose: 3000, // 3 saniye sonra kapanır
+        autoClose: 3000,
       });
     }
   };
 
   return (
     <div>
-      <ToastContainer /> {/* Toastify bileşeni */}
+      <ToastContainer />
       <form className="profile-edit-form" onSubmit={handleSubmit}>
         <h1>Edit Profile</h1>
         <label>

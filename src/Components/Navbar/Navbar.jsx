@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { IoPerson, IoNotificationsOutline } from "react-icons/io5";
+import { IoPerson } from "react-icons/io5";
 import { FiMessageSquare } from "react-icons/fi";
-import { FaMapMarkerAlt, FaUserClock } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { RiUserStarLine } from "react-icons/ri";
 import axios from "axios";
 import { useAuth } from "../../context/AuthContext";

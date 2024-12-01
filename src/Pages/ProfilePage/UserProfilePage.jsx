@@ -2,13 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  FaUser,
   FaEnvelope,
   FaMapMarkerAlt,
   FaPhone,
   FaBirthdayCake,
   FaStar,
-} from "react-icons/fa"; // Puan ikonu için FaStar eklendi
+} from "react-icons/fa";
 import { IoPersonCircle } from "react-icons/io5";
 import "./UserProfilePage.css";
 

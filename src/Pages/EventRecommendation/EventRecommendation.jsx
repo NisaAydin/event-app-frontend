@@ -37,7 +37,7 @@ function EventRecommendation() {
 
       {events.length > 0 ? (
         <Slider
-          items={events} // Slider'a gönderilen etkinlik verisi
+          items={events}
           renderItem={(event, index) => <EventCard key={index} event={event} />}
         />
       ) : (

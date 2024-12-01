@@ -6,7 +6,7 @@
 #home,
 #events,
 #reviews {
-  height: 100vh; /* Her bölüm tam ekran */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

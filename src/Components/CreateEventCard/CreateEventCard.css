@@ -2,40 +2,40 @@
   background: linear-gradient(135deg, #1f1f2e, #434955);
   background-size: 200% 200%;
   animation: gradientShift 6s ease-in-out infinite;
-  color: white; /* Yazı rengini mevcut temaya uyarladık */
-  border-radius: 10px; /* Kartın köşelerini yuvarladık */
-  padding: 20px; /* İç boşluk */
-  margin-top: 20px; /* Üstten biraz boşluk */
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* İnce bir kenar */
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .create-event-card h4 {
-  font-size: 18px; /* Başlık boyutu */
-  margin-bottom: 10px; /* Başlık alt boşluk */
-  text-align: center; /* Ortalanmış başlık */
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .create-event-card p {
-  font-size: 14px; /* Açıklama yazısı boyutu */
-  margin-bottom: 15px; /* Açıklama alt boşluk */
-  text-align: center; /* Ortalanmış metin */
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .create-event-button {
-  background: rgba(255, 255, 255, 0.2); /* Düğme arka planı */
-  color: white; /* Düğme yazı rengi */
-  border: none; /* Kenarlık kaldırıldı */
-  padding: 10px 20px; /* İç boşluklar */
-  border-radius: 5px; /* Düğme köşelerini yuvarladık */
-  cursor: pointer; /* İmleç değişimi */
-  font-size: 14px; /* Yazı boyutu */
-  transition: background 0.3s ease; /* Hover efekti */
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 14px; 
+  transition: background 0.3s ease;
 }
 
 .create-event-button:hover {
-  background: rgba(255, 255, 255, 0.4); /* Hover için biraz daha açık ton */
+  background: rgba(255, 255, 255, 0.4);
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import axios from "axios"; // Backend API'sine veri göndermek için HTTP isteklerini yapmakta kullanılır.
-import { toast } from "react-toastify"; // Kullanıcıya başarılı veya başarısız işlem bildirimleri göstermek için kullanılır.
+import axios from "axios";
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import "./AddEventPage.css";
 import Button from "../../Components/Button/Button";

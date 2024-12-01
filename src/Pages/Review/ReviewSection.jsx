@@ -1,7 +1,8 @@
-import React from "react";
 import "./ReviewSection.css";
 import ReviewCard from "../../Components/ReviewCard/ReviewCard";
-import eventPlannerImage from "../../assets/images/resimNisa.jpg";
+import reviewUserImage1 from "../../assets/images/resimNisa.jpg";
+import reviewUserImage2 from "../../assets/images/John_Doe,_born_John_Nommensen_Duchac.jpg";
+import reviewUserImage3 from "../../assets/images/kaan topcu.png";
 
 function ReviewSection() {
   const reviews = [
@@ -11,21 +12,21 @@ function ReviewSection() {
         "EventHub hayatımı değiştirdi. Sosyalleşmek için mükemmel bir platform!",
       name: "Nisa Aydın",
       role: "Founder & Leader",
-      image: eventPlannerImage,
+      image: reviewUserImage1,
     },
     {
       id: 2,
       quote: "Hayatı daha eğlenceli hale getiriyor, denemelisiniz!",
       name: "Steve Mark",
       role: "Founder & Leader",
-      image: "https://via.placeholder.com/50",
+      image: reviewUserImage2
     },
     {
       id: 3,
       quote: "Organizasyonlar için vazgeçilmez bir araç. Herkese öneririm!",
       name: "Kenn Topcu",
       role: "Event Specialist",
-      image: "https://via.placeholder.com/50",
+      image: reviewUserImage3
     },
   ];
 

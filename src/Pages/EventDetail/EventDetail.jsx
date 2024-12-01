@@ -10,12 +10,10 @@ function EventDetail() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const [isJoined, setIsJoined] = useState(false); // Kullanıcının etkinliğe katılıp katılmadığını kontrol etmek için state
+  const [isJoined, setIsJoined] = useState(false); 
   const { event } = location.state || {};
 
-  // Etkinliğe Katılım Durumunu Kontrol Et
   useEffect(() => {
-    // Eğer event tanımlı değilse, bu durumda hiçbir işlem yapma
     if (!event?.id) return;
 
     const checkParticipation = async () => {
@@ -24,7 +22,7 @@ function EventDetail() {
           `http://localhost:3000/participate/isParticipated/${event.id}`,
           { withCredentials: true }
         );
-        setIsJoined(response.data.isParticipated); // Backend'den gelen duruma göre state'i güncelle
+        setIsJoined(response.data.isParticipated);
       } catch (error) {
         console.error(
           "Katılım durumu kontrol edilirken bir hata oluştu:",
@@ -34,19 +32,16 @@ function EventDetail() {
     };
 
     checkParticipation();
-  }, [event]); // event objesi değiştiğinde tekrar kontrol edilir
+  }, [event]);
 
-  // Etkinliğe Katılma Butonu
   const handleJoinEvent = async () => {
     try {
-      // Kullanıcı oturum durumunu kontrol et
       const sessionResponse = await axios.get(
         "http://localhost:3000/auth/check-session",
         { withCredentials: true }
       );
 
       if (!sessionResponse.data.authenticated) {
-        // Giriş yapmamışsa giriş sayfasına yönlendir
         toast.warning("Lütfen etkinliğe katılmadan önce giriş yapın.", {
           position: "top-right",
           autoClose: 3000,
@@ -56,15 +51,14 @@ function EventDetail() {
           draggable: true,
           progress: undefined,
         });
-        navigate("/signin"); // Login sayfasına yönlendirme
+        navigate("/signin");
         return;
       }
 
-      // Kullanıcı oturum açmışsa etkinliğe katıl
       const response = await axios.post(
-        "http://localhost:3000/participate/participateInEvent", // Backend API'si
-        { eventId: event.id }, // Gönderilen veri
-        { withCredentials: true } // Cookie ile kimlik doğrulama
+        "http://localhost:3000/participate/participateInEvent",
+        { eventId: event.id },
+        { withCredentials: true }
       );
 
       toast.success(response.data.message, {
@@ -77,7 +71,7 @@ function EventDetail() {
         progress: undefined,
       });
 
-      setIsJoined(true); // Kullanıcı katıldıysa durumu güncelle
+      setIsJoined(true);
     } catch (error) {
       if (error.response?.status === 401) {
         toast.warning("Lütfen giriş yapın.", {
@@ -110,12 +104,11 @@ function EventDetail() {
   };
   console.log("Bura");
 
-  // Etkinlikten Çıkma Butonu
   const handleLeaveEvent = async () => {
     console.log("Bura2");
     try {
       const response = await axios.post(
-        "http://localhost:3000/participate/leaveEvent", // Backend endpoint
+        "http://localhost:3000/participate/leaveEvent",
         { eventId: event.id },
         { withCredentials: true }
       );
@@ -124,7 +117,6 @@ function EventDetail() {
       console.log("Gönderilen eventId:", event.id);
       console.log("Etkinlikten çıkış başarılı:", response.data);
 
-      // Kullanıcı etkinlikten ayrıldıktan sonra state güncellenir
       setIsJoined(false);
       toast.success("Etkinlikten başarıyla ayrıldınız.", {
         position: "top-right",
@@ -157,17 +149,14 @@ function EventDetail() {
     }
   };
 
-  // Geri Dön Butonu
   const handleBackButton = () => {
     navigate("/dashboard");
   };
 
-  // Eğer event bilgisi yoksa hata mesajı göster
   if (!event) {
     return <p className="event-detail-error">Etkinlik bilgisi bulunamadı!</p>;
   }
 
-  // Google Maps Embed API URL'si
   const googleMapsUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyB-K7bSzVpimqXlTacrLSpGE8ZtcD_KZ4A&q=${encodeURIComponent(
     event.Location
   )}`;
@@ -216,10 +205,10 @@ function EventDetail() {
         {isJoined ? (
           <Button
             text={"Katıldınız"}
-            onClick={handleLeaveEvent} // Etkinlikten çık
+            onClick={handleLeaveEvent}
             variant="toggle"
             className="joined-event-button"
-            disabled={true} // Buton devre dışı
+            disabled={true}
           />
         ) : (
           <Button

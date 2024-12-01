@@ -16,11 +16,11 @@
 }
 
 .events-grid {
-  display: grid; /* Flex yerine grid kullan */
+  display: grid; 
   grid-template-columns: repeat(
     auto-fit,
     minmax(300px, 1fr)
-  ); /* Dinamik kolonlar */
-  gap: 30px; /* Kartlar arası boşluk */
+  );
+  gap: 30px;
   padding: 20px;
 }

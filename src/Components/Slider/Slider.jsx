@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+/* eslint-disable react/prop-types */
+import { useState, useEffect, useRef } from "react";
 import "./Slider.css";
 
 const Slider = ({ items, renderItem }) => {
@@ -7,7 +8,7 @@ const Slider = ({ items, renderItem }) => {
 
   const handleScroll = (direction) => {
     const slider = sliderRef.current;
-    const scrollAmount = 400; // Kaydırma miktarı
+    const scrollAmount = 400;
     if (direction === "left") {
       slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     } else {
@@ -19,15 +20,15 @@ const Slider = ({ items, renderItem }) => {
     const checkOverflow = () => {
       const slider = sliderRef.current;
       if (slider.scrollWidth > slider.clientWidth) {
-        setIsOverflowing(true); // Kartlar sığmıyor
+        setIsOverflowing(true);
       } else {
-        setIsOverflowing(false); // Kartlar sığıyor
+        setIsOverflowing(false);
       }
     };
 
-    checkOverflow(); // İlk yüklemede kontrol et
-    window.addEventListener("resize", checkOverflow); // Pencere boyutu değiştiğinde kontrol et
-    return () => window.removeEventListener("resize", checkOverflow); // Event listener'ı temizle
+    checkOverflow();
+    window.addEventListener("resize", checkOverflow);
+    return () => window.removeEventListener("resize", checkOverflow);
   }, [items]);
 
   return (
