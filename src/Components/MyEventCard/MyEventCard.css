@@ -80,7 +80,7 @@ body {
   padding: 5px 10px;
   border-radius: 20px;
   display: inline-block;
-  margin-bottom: 10px; /* Başlık ile boşluk */
+  margin-bottom: 10px;
   margin-top: 10px;
 }
 .my-event-icon {
@@ -91,7 +91,7 @@ body {
 .my-event-image {
   height: 300px;
   object-fit: cover;
-  flex-shrink: 0; /* Resmin küçülmesini önler */
+  flex-shrink: 0;
 }
 .my-event-date-time {
   display: flex;

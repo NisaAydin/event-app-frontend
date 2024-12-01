@@ -19,11 +19,11 @@
 
 /* Resim */
 .today-event-image {
-  width: 150px; /* Büyük halini koruyacak şekilde genişlik */
-  height: 100px; /* Büyük halini koruyacak şekilde yükseklik */
+  width: 150px;
+  height: 100px;
   object-fit: cover;
   border-radius: 8px;
-  flex-shrink: 0; /* Resmin küçülmesini önler */
+  flex-shrink: 0;
 }
 
 /* Bilgi Alanı */
@@ -32,7 +32,7 @@
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  min-width: 0; /* İçerik taşmasını engeller */
+  min-width: 0;
 }
 
 /* Kategori */
@@ -44,8 +44,8 @@
   padding: 5px 10px;
   border-radius: 20px;
   display: inline-block;
-  max-width: fit-content; /* Metin kadar genişlik */
-  margin-bottom: 10px; /* Başlık ile boşluk */
+  max-width: fit-content;
+  margin-bottom: 10px;
 }
 
 /* Başlık */
@@ -61,11 +61,11 @@
   font-size: 0.9rem;
   color: #b0b0b0;
   margin-bottom: 10px;
-  overflow: hidden; /* Taşan kısmı gizler */
-  text-overflow: ellipsis; /* Uzun metinlerde üç nokta ekler */
-  white-space: nowrap; /* Tek satır tut */
-  line-height: 1.2rem; /* Satır yüksekliği */
-  width: 100%; /* Resmin sağındaki tüm alanı kapla */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.2rem;
+  width: 100%;
 }
 
 /* Tarih ve Zaman */

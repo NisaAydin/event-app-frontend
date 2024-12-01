@@ -10,7 +10,7 @@ body {
 /* Ana Konteyner */
 .my-events-container {
   max-width: 900px;
-  margin: 120px auto; /* Ortala ve yukarıda boşluk bırak */
+  margin: 120px auto;
   padding: 30px;
   background: linear-gradient(135deg, #1f1f2e, #434955);
   border-radius: 12px;

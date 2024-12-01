@@ -6,7 +6,6 @@ import EventRecommendation from "../EventRecommendation/EventRecommendation";
 import InterestBasedEvents from "../InterestBasedEvents/InterestBasedEvents";
 
 function Dashboard() {
-  // Sahte Etkinlik Verileri
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   const handleCreateEvent = () => {

@@ -6,7 +6,6 @@
   background: transparent;
   color: white;
   font-family: "Poppins", sans-serif;
-  /*position: relative;*/
   margin-top: auto;
 }
 
@@ -16,10 +15,9 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  overflow-y: auto; /* İçeriği kaydırılabilir yapar */
-  max-height: 550px; /* Maksimum yükseklik sınırı */
+  overflow-y: auto;
+  max-height: 550px;
   min-height: 250px;
-  /*position: absolute;*/
 }
 .selected-day-main {
   width: 600px;

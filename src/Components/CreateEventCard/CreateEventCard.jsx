@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import "./CreateEventCard.css";
 import Button from "../Button/Button";
 

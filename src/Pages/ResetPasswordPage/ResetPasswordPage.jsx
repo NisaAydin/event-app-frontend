@@ -5,7 +5,7 @@ import "./ResetPasswordPage.css";
 
 function ResetPasswordPage() {
   const [searchParams] = useSearchParams();
-  const token = searchParams.get("token"); // Tokeni URL'den al
+  const token = searchParams.get("token");
   const [newPassword, setNewPassword] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");

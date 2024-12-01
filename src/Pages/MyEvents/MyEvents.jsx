@@ -66,8 +66,8 @@ function MyEvents() {
             <MyEventCard
               key={event.id}
               event={event}
-              onClick={() => handleEventClick(event.id)} // Düzenleme sayfasına yönlendirme
-              onDelete={handleDeleteEvent} // Silme işlemi
+              onClick={() => handleEventClick(event.id)} 
+              onDelete={handleDeleteEvent}
             />
           ))
         ) : (

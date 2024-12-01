@@ -11,7 +11,6 @@ function EventsSection() {
   const [errorTrending, setErrorTrending] = useState("");
   const [errorUpcoming, setErrorUpcoming] = useState("");
 
-  // Fetch Trending Events
   useEffect(() => {
     const fetchTrendingEvents = async () => {
       try {
@@ -34,7 +33,6 @@ function EventsSection() {
     fetchTrendingEvents();
   }, []);
 
-  // Fetch Upcoming Events
   useEffect(() => {
     const fetchUpcomingEvents = async () => {
       try {

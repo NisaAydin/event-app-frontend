@@ -21,7 +21,6 @@ function UpdateEvent() {
   });
   const [selectedFile, setSelectedFile] = useState(null);
 
-  // Kategoriler sabit olarak burada tanımlandı
   const interestOptions = [
     "Spor ve Fitness",
     "Sanat ve Kültür",
@@ -31,7 +30,6 @@ function UpdateEvent() {
     "Teknoloji",
   ];
 
-  // Etkinlik bilgilerini yükle
   useEffect(() => {
     const fetchEvent = async () => {
       try {
@@ -45,7 +43,7 @@ function UpdateEvent() {
 
         setEvent({
           ...fetchedEvent,
-          CategoryName: fetchedEvent.Category?.Category || "", // Gelen kategori adı
+          CategoryName: fetchedEvent.Category?.Category || "",
         });
       } catch (error) {
         toast.error("Etkinlik bilgileri alınamadı.", { position: "top-right" });
@@ -55,7 +53,6 @@ function UpdateEvent() {
     fetchEvent();
   }, [id]);
 
-  // Form submit işlemi
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -66,7 +63,7 @@ function UpdateEvent() {
       });
 
       if (selectedFile) {
-        formData.append("EventPicture", selectedFile); // Resim dosyasını ekle
+        formData.append("EventPicture", selectedFile);
       }
 
       await axios.put(`http://localhost:3000/event/update/${id}`, formData, {
@@ -78,7 +75,7 @@ function UpdateEvent() {
         position: "top-right",
       });
 
-      navigate("/my-events"); // Güncelleme sonrası MyEvents sayfasına dön
+      navigate("/my-events");
     } catch (error) {
       toast.error(
         `Etkinlik güncellenirken hata oluştu: ${
@@ -89,7 +86,6 @@ function UpdateEvent() {
     }
   };
 
-  // Form alanlarının değişimini yönet
   const handleChange = (e) => {
     const { name, value } = e.target;
     setEvent((prevEvent) => ({
@@ -98,7 +94,6 @@ function UpdateEvent() {
     }));
   };
 
-  // Resim dosyası seçimi
   const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
   };
@@ -177,7 +172,7 @@ function UpdateEvent() {
                   id={category}
                   name="CategoryName"
                   value={category}
-                  checked={event.CategoryName === category} // Önceden seçili kategori
+                  checked={event.CategoryName === category}
                   onChange={handleChange}
                 />
                 <label htmlFor={category}>{category}</label>

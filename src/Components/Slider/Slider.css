@@ -3,28 +3,28 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center; /* Slider'ı düzgün ortalamak için */
+  justify-content: center;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto; /* Ortalamak için */
-  padding: 0; /* Padding kaldırıldı */
+  margin: 0 auto;
+  padding: 0;
 }
 
 /* Kartların bulunduğu yatay kaydırma alanı */
 .slider-container {
   display: flex;
-  overflow: hidden; /* Taşan kartları gizle */
-  gap: 70px; /* Kartlar arasındaki boşluk */
-  padding-left: 0; /* Sol boşluk kaldırıldı */
-  margin-left: 0; /* Sol boşluk kaldırıldı */
-  width: 100%; /* Slider genişliğini doldur */
+  overflow: hidden;
+  gap: 70px;
+  padding-left: 0;
+  margin-left: 0;
+  width: 100%;
 }
 
 /* Kart stili */
 .event-card {
-  flex: 0 0 auto; /* Kartların genişliğini sabit tutar */
-  width: 400px; /* Kart genişliği */
-  min-height: 480px; /* Kart yüksekliği */
+  flex: 0 0 auto;
+  width: 400px; 
+  min-height: 480px;
 }
 
 /* Butonlar */
@@ -44,12 +44,12 @@
 
 /* Sol buton */
 .slider-button.left {
-  left: -80px; /* Buton slider container ile daha yakın */
+  left: -80px;
 }
 
 /* Sağ buton */
 .slider-button.right {
-  right: -80px; /* Buton slider container ile daha yakın */
+  right: -80px;
 }
 
 /* Buton hover efekti */

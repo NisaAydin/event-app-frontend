@@ -70,7 +70,6 @@ function MapPage() {
             mapId: MAP_ID,
           }}
         >
-          {/* User Location Marker */}
           <Marker
             position={{
               lat: userLocation.latitude,
@@ -82,7 +81,6 @@ function MapPage() {
             title="Sizin Konumunuz"
           />
 
-          {/* Nearby Events Markers */}
           {nearbyEvents.map((event) => (
             <Marker
               key={event.id}
@@ -106,7 +104,6 @@ function MapPage() {
             />
           ))}
 
-          {/* InfoWindow for Selected Marker */}
           {selectedEvent && infoWindowPosition && (
             <InfoWindow
               position={infoWindowPosition}

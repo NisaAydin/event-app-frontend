@@ -104,9 +104,9 @@
   padding: 5px 10px;
   border-radius: 20px;
   display: inline-block;
-  max-width: fit-content; /* Metin kadar genişlik */
-  margin-bottom: 10px; /* Başlık ile boşluk */
+  max-width: fit-content;
+  margin-bottom: 10px;
 }
 .join-event-button {
-  align-self: flex-end; /* Butonu sağa yaslar */
+  align-self: flex-end;
 }

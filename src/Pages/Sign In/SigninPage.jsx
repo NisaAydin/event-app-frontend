@@ -27,12 +27,12 @@ function SignInPage() {
         "http://localhost:3000/auth/login",
         formData,
         {
-          withCredentials: true, // Cookie'yi backend'e gönder ve al
+          withCredentials: true,
         }
       );
 
       console.log("Login successful: ", response.data);
-      login(response.data.user); // AuthContext'teki login fonksiyonunu çağır
+      login(response.data.user);
       navigate("/dashboard");
     } catch (error) {
       console.error("Login error: ", error.response?.data || error.message);

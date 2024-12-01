@@ -7,7 +7,7 @@
   grid-template-columns: repeat(
     auto-fit,
     minmax(250px, 1fr)
-  ); /* Minimum 250px genişlik, maksimum esneklik */
-  gap: 70px; /* Kartlar arasında boşluk */
-  justify-content: center; /* Ortaya hizalama */
+  );
+  gap: 70px;
+  justify-content: center;
 }

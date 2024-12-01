@@ -14,12 +14,18 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkAuthentication = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/auth/check-session", {
-          withCredentials: true, // Çerezleri gönder
-        });
+        const response = await axios.get(
+          "http://localhost:3000/auth/check-session",
+          {
+            withCredentials: true, // Çerezleri gönder
+          }
+        );
         setIsAuthenticated(response.data.authenticated);
       } catch (error) {
-        console.error("Authentication check failed:", error.response?.data || error.message);
+        console.error(
+          "Authentication check failed:",
+          error.response?.data || error.message
+        );
         setIsAuthenticated(false);
       } finally {
         setLoading(false);
@@ -34,7 +40,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
-      {!loading && children} {/* Yükleme tamamlanana kadar çocukları göstermeyin */}
+      {!loading && children}
     </AuthContext.Provider>
   );
 };

@@ -1,10 +1,9 @@
-import React from "react";
 import "./HomeSection.css";
 import eventPlannerImage from "../../assets/images/event_planner5.png";
-import { useNavigate } from "react-router-dom"; // useNavigate hook'unu ekleyin
+import { useNavigate } from "react-router-dom";
 
 function HomeSection() {
-  const navigate = useNavigate(); // useNavigate fonksiyonunu başlatın
+  const navigate = useNavigate();
   const handleGetStartedClick = () => {
     navigate("/signup");
   };
@@ -29,7 +28,7 @@ function HomeSection() {
         </div>
         <div className="hero-right">
           <img
-            src={eventPlannerImage} // Bu, etkinlik uygulaman için uygun bir görsel olacak
+            src={eventPlannerImage}
             alt="Event illustration"
             className="hero-image"
           />

@@ -11,14 +11,13 @@ function TodayEventsCard({ event }) {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    // Detay sayfasına geçerken event ve currentUser bilgilerini state ile gönderiyoruz
     navigate("/event-detail", { state: { event } });
   };
 
   return (
     <div onClick={handleCardClick} className="today-event-card">
       <img
-        src={`http://localhost:3000/${event.EventPicture}`} // Resmi göster
+        src={`http://localhost:3000/${event.EventPicture}`}
         alt={event.EventName}
         className="today-event-image"
       />
