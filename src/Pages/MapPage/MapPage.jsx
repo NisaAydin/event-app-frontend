@@ -28,8 +28,8 @@ function MapPage() {
   }, []);
 
   const mapContainerStyle = {
-    width: "100%",
-    height: "100vh",
+    width: "1200px",
+    height: "80vh",
   };
 
   const defaultCenter = userLocation
@@ -60,12 +60,12 @@ function MapPage() {
 
   return (
     <div>
-      <h1>Çevremdeki Etkinlikler</h1>
+      <h1 style={{marginTop: "80px"}}>Çevremdeki Etkinlikler</h1>
       {userLocation && (
         <GoogleMap
           mapContainerStyle={mapContainerStyle}
           center={defaultCenter}
-          zoom={12}
+          zoom={9}
           options={{
             mapId: MAP_ID,
           }}

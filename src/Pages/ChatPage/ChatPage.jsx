@@ -114,35 +114,59 @@ function ChatPage() {
             <h3>Mesajlar</h3>
             <div className="message-list">
               {messages.length > 0 ? (
-                messages.map((msg) => (
-                  <div
-                    key={msg.id}
-                    className={`message ${
-                      msg.SenderId === currentUser?.id
-                        ? "message-own"
-                        : "message-other"
-                    }`}
-                  >
-                    <img
-                      className="message-avatar"
-                      src={
-                        msg.Sender?.ProfilePicture
-                          ? `http://localhost:3000/${msg.Sender.ProfilePicture}`
-                          : "http://localhost:3000/uploads/default-profile.png"
-                      }
-                      alt={`${msg.Sender?.Name}'s Profile`}
-                    />
-                    <div className="message-content">
-                      <strong>
-                        {msg.Sender?.Name} {msg.Sender?.Surname}:
-                      </strong>
-                      <p>{msg.MessageText}</p>
-                      <small>
-                        {new Date(msg.SendTime).toLocaleTimeString()}
-                      </small>
+                messages.map((msg, index) => {
+                  // Mesajın tarihi (gün/ay/yıl formatında)
+                  const currentMessageDate = new Date(
+                    msg.SendTime
+                  ).toLocaleDateString();
+
+                  // Bir önceki mesajın tarihi (ilk mesaj için null olacak)
+                  const previousMessageDate =
+                    index > 0
+                      ? new Date(
+                          messages[index - 1].SendTime
+                        ).toLocaleDateString()
+                      : null;
+
+                  return (
+                    <div key={msg.id}>
+                      {/* Tarihi yalnızca önceki mesajın tarihinden farklıysa ekle */}
+                      {currentMessageDate !== previousMessageDate && (
+                        <div className="message-date">
+                          <span>{currentMessageDate}</span>
+                        </div>
+                      )}
+
+                      {/* Mesaj içeriği */}
+                      <div
+                        className={`message ${
+                          msg.SenderId === currentUser?.id
+                            ? "message-own"
+                            : "message-other"
+                        }`}
+                      >
+                        <img
+                          className="message-avatar"
+                          src={
+                            msg.Sender?.ProfilePicture
+                              ? `http://localhost:3000/${msg.Sender.ProfilePicture}`
+                              : "http://localhost:3000/uploads/default-profile.png"
+                          }
+                          alt={`${msg.Sender?.Name}'s Profile`}
+                        />
+                        <div className="message-content">
+                          <strong>
+                            {msg.Sender?.Name} {msg.Sender?.Surname}:
+                          </strong>
+                          <p>{msg.MessageText}</p>
+                          <small>
+                            {new Date(msg.SendTime).toLocaleTimeString()}
+                          </small>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                ))
+                  );
+                })
               ) : (
                 <p>Bu etkinlik için mesaj bulunmuyor.</p>
               )}
