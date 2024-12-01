@@ -60,7 +60,6 @@ function MyEvents() {
 
   return (
     <div className="my-events-container">
-      <h2 className="title">Kendi Etkinliklerim</h2>
       <div className="my-events-list">
         {myEvents.length > 0 ? (
           myEvents.map((event) => (

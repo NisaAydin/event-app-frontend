@@ -1,6 +1,7 @@
 import React from "react";
 import "./ReviewSection.css";
 import ReviewCard from "../../Components/ReviewCard/ReviewCard";
+import eventPlannerImage from "../../assets/images/resimNisa.jpg";
 
 function ReviewSection() {
   const reviews = [
@@ -10,7 +11,7 @@ function ReviewSection() {
         "EventHub hayatımı değiştirdi. Sosyalleşmek için mükemmel bir platform!",
       name: "Nisa Aydın",
       role: "Founder & Leader",
-      image: "https://via.placeholder.com/50",
+      image: eventPlannerImage,
     },
     {
       id: 2,
@@ -31,7 +32,7 @@ function ReviewSection() {
   return (
     <section className="review-section">
       <div className="review-header">
-        <h2 className="review-title">What people are saying about us</h2>
+        <h2 className="review-title">İnsanlar Bizim İçin Ne Diyor?</h2>
         <p className="review-description">
           EventHub sayesinde binlerce etkinlik katılımcısı bir araya geliyor.
         </p>

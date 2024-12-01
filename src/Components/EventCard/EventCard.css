@@ -9,8 +9,8 @@
   flex-direction: column;
   justify-content: space-between;
   color: #ffffff;
-  width: 300px;
-  height: 460px;
+  width: 380px;
+  height: 620px;
 }
 
 .event-card:hover {
@@ -18,7 +18,6 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Kategori */
 .event-category {
   background-color: #00b4d8;
   color: #1f1f2e;
@@ -26,8 +25,10 @@
   font-weight: bold;
   padding: 5px 10px;
   border-radius: 20px;
-  display: inline-block;
-  margin-bottom: 5px; /* Başlık ile boşluk */
+  display: inline-block; /* Ensure it adjusts to content */
+  width: fit-content; /* Shrinks to fit the content size */
+  margin-bottom: 5px; /* Add some spacing below */
+  text-align: center; /* Center-align text inside */
 }
 
 /* Görsel */
@@ -43,6 +44,10 @@
 /* Bilgi alanı */
 .event-info {
   text-align: left;
+  flex-grow: 1; /* Bilgi alanını esnek yap */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Üstte hizalar */
 }
 
 /* Başlık */
@@ -65,7 +70,8 @@
   align-items: center;
   font-size: 0.9rem;
   color: #b0b0b0;
-  margin-bottom: 0px;
+
+  margin-bottom: auto;
 }
 
 .event-icon {
@@ -74,10 +80,12 @@
   color: #00b4d8;
 }
 .event-description {
-  max-height: 50px; /* Maksimum yüksekliği belirtiyoruz */
-  overflow: hidden; /* Taşan metni gizliyoruz */
-  text-overflow: ellipsis; /* Taşan metni üç nokta ile gösteriyoruz */
-  white-space: nowrap; /* Metni tek satırda tutuyoruz (isteğe bağlı) */
   color: #d1d1d1; /* Metin rengi */
   font-size: 0.9rem; /* Yazı boyutu */
+  margin-bottom: 5px;
+}
+.event-creator {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  margin-bottom: 10px;
 }

@@ -42,10 +42,10 @@ function SignInPage() {
 
   return (
     <div className="signin-page">
-      <h1 className="signin-title">Sign In</h1>
+      <h1 className="signin-title">Giriş Yap</h1>
       <form className="signin-form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Username</label>
+          <label>Kullanıcı Adı</label>
           <input
             type="text"
             name="username"
@@ -55,7 +55,7 @@ function SignInPage() {
           />
         </div>
         <div className="form-group">
-          <label>Password</label>
+          <label>Şifre</label>
           <input
             type="password"
             name="password"
@@ -65,20 +65,20 @@ function SignInPage() {
           />
         </div>
         {errorMessage && <p>{errorMessage}</p>}
-        <Button text="Sign In" variant="primary" type="submit" />
+        <Button text="Giriş Yap" variant="primary" type="submit" />
       </form>
 
       <div className="signin-links">
         <p>
-          Forgot your password?{" "}
+          Şifrenizi mi unuttunuz?{" "}
           <Link to="/forgot-password" className="reset-link">
-            Reset it here
+            Sıfırlayın
           </Link>
         </p>
         <p>
-          Don&apos;t have an account?{" "}
+          Henüz bir hesabınız yok mu?{" "}
           <Link to="/signup" className="signup-link">
-            Sign Up
+            Kayıt Ol
           </Link>
         </p>
       </div>

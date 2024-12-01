@@ -1,0 +1,58 @@
+/* Genel slider kapsayıcı */
+.slider-container-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Slider'ı düzgün ortalamak için */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Ortalamak için */
+  padding: 0; /* Padding kaldırıldı */
+}
+
+/* Kartların bulunduğu yatay kaydırma alanı */
+.slider-container {
+  display: flex;
+  overflow: hidden; /* Taşan kartları gizle */
+  gap: 70px; /* Kartlar arasındaki boşluk */
+  padding-left: 0; /* Sol boşluk kaldırıldı */
+  margin-left: 0; /* Sol boşluk kaldırıldı */
+  width: 100%; /* Slider genişliğini doldur */
+}
+
+/* Kart stili */
+.event-card {
+  flex: 0 0 auto; /* Kartların genişliğini sabit tutar */
+  width: 400px; /* Kart genişliği */
+  min-height: 480px; /* Kart yüksekliği */
+}
+
+/* Butonlar */
+.slider-button {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Sol buton */
+.slider-button.left {
+  left: -80px; /* Buton slider container ile daha yakın */
+}
+
+/* Sağ buton */
+.slider-button.right {
+  right: -80px; /* Buton slider container ile daha yakın */
+}
+
+/* Buton hover efekti */
+.slider-button:hover {
+  background-color: #0077a3;
+}

@@ -79,7 +79,7 @@ function ProfilePage() {
         </p>
       </div>
       <Link to="/profile/edit">
-        <button className="edit-button">Edit Profile</button>
+        <button className="edit-button">Profili Düzenle</button>
       </Link>
     </div>
   );

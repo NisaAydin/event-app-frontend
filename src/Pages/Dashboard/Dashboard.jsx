@@ -20,8 +20,8 @@ function Dashboard() {
         setSelectedDate={setSelectedDate}
         onCreateEvent={handleCreateEvent}
       />
-      <EventRecommendation />
       <InterestBasedEvents />
+      <EventRecommendation />
     </div>
   );
 }

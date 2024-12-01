@@ -1,6 +1,7 @@
 /* Ana Profil Sayfası */
 .profile-page {
   max-width: 600px;
+  min-width: 400px;
   margin: 100px auto;
   padding: 30px;
   background: linear-gradient(135deg, #1f1f2e, #434955);
@@ -50,6 +51,7 @@
 .profile-page p {
   font-size: 1rem;
   margin: 10px 0;
+  gap: 5px;
   color: #d1d5db;
 }
 .profile-icon {

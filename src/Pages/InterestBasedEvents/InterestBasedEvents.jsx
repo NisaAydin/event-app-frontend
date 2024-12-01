@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import EventCard from "../../Components/EventCard/EventCard";
+import "./InterestBasedEvents.css";
+import Slider from "../../Components/Slider/Slider";
 
 function InterestBasedEvents() {
   const [events, setEvents] = useState([]);
@@ -13,9 +15,7 @@ function InterestBasedEvents() {
       try {
         const response = await axios.get(
           "http://localhost:3000/event/user-interest-events",
-          {
-            withCredentials: true, // JWT veya oturum doğrulama için
-          }
+          { withCredentials: true }
         );
         setEvents(response.data);
         setError("");
@@ -44,11 +44,10 @@ function InterestBasedEvents() {
   return (
     <div className="event-recommendation">
       <h2>İlgi Alanlarınıza Uygun Etkinlikler</h2>
-      <div className="event-list">
-        {events.length > 0
-          ? events.map((event) => <EventCard key={event.id} event={event} />)
-          : !error && <p>Yakın çevrenizde önerilen etkinlikler aranıyor...</p>}
-      </div>
+      <Slider
+        items={events}
+        renderItem={(event, index) => <EventCard key={index} event={event} />}
+      />
     </div>
   );
 }

@@ -1,0 +1,6 @@
+/* Kart stili */
+.event-card {
+  flex: 0 0 auto; /* Kartların genişliğini sabit tutar */
+  width: 300px; /* Kart genişliği */
+  min-height: 480px; /* Kart yüksekliği */
+}

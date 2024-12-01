@@ -1,58 +1,67 @@
 .participated-event-card {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .participated-event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .event-card-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-  
-  .event-card-info {
-    padding: 15px;
-  }
-  
-  .event-card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #007bff;
-  }
-  
-  .event-card-category {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  .event-card-description {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 15px;
-  }
-  
-  .event-card-meta {
-    font-size: 0.8rem;
-    color: #777;
-    line-height: 1.5;
-  }
-  
-  .event-card-meta p {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #1f1f2e, #434955);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: #f8f9fa; /* Açık metin rengi */
+}
+
+.participated-event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.event-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #434955;
+}
+
+.event-card-info {
+  padding: 20px;
+}
+
+.event-card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #00b4d8; /* Modern mavi başlık */
+}
+
+.event-card-category {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #adb5bd;
+  margin-bottom: 10px;
+}
+
+.event-card-description {
+  font-size: 0.9rem;
+  color: #ced4da;
+  margin-bottom: 15px;
+}
+
+.event-card-meta {
+  font-size: 0.8rem;
+  color: #868e96; /* Daha açık gri */
+  line-height: 1.5;
+  border-top: 1px solid #343a40;
+  padding-top: 15px;
+}
+
+.event-card-meta p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.event-card-meta p svg {
+  color: #00b4d8; /* İkon mavi rengi */
+  font-size: 0.9rem;
+}

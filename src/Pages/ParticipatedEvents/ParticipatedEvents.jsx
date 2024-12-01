@@ -44,7 +44,7 @@ function ParticipatedEvents() {
           ))}
         </div>
       ) : (
-        <p>Henüz hiçbir etkinliğe katılmadınız.</p>
+        <p>Henüz hiçbir etkinliğe hatılımcı olarak katılmadınız.</p>
       )}
     </div>
   );
